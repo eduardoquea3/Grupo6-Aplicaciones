@@ -1,0 +1,11 @@
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaNegocio.dll
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaNegocio.pdb
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaDatos.dll
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaEntidad.dll
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaDatos.pdb
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaEntidad.pdb
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.dll
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.pdb

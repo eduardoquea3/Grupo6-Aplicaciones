@@ -1,0 +1,9 @@
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\bin\Debug\CapaDatos.dll
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\bin\Debug\CapaDatos.pdb
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\bin\Debug\CapaEntidad.dll
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\bin\Debug\CapaEntidad.pdb
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.dll
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.pdb
