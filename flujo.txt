@@ -1,0 +1,6 @@
+git add . (ruta del archivo que modificaste)
+git status
+git commit -m "mensaje"
+git push
+----------
+git pull
