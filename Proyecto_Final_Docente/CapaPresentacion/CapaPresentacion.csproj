@@ -67,10 +67,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\EditarDiscapacidad.css" />
+    <Content Include="css\layout.css" />
     <Content Include="css\login.css" />
-    <Content Include="HtmlPage1.html" />
+    <Content Include="css\perfil.css" />
+    <Content Include="imagenes\colegio.png" />
+    <Content Include="imagenes\logo.png" />
+    <Content Include="imagenes\user.png" />
+    <Content Include="js\layout.js" />
     <Content Include="js\login.js" />
+    <Content Include="js\perfil.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Pages\Inicio.aspx" />
+    <Content Include="Pages\Perfil.aspx" />
+    <Content Include="Pages\Academico.aspx" />
+    <Content Include="Pages\Experiencia.aspx" />
+    <Content Include="Pages\Cursos.aspx" />
+    <Content Include="Pages\Perfil\EditarDiscapacidad.aspx" />
+    <Content Include="Pages\WebForm7.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -81,10 +95,67 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Layout.Master.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Layout.Master.designer.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Academico.aspx.cs">
+      <DependentUpon>Academico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Academico.aspx.designer.cs">
+      <DependentUpon>Academico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Experiencia.aspx.cs">
+      <DependentUpon>Experiencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Experiencia.aspx.designer.cs">
+      <DependentUpon>Experiencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cursos.aspx.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Cursos.aspx.designer.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Perfil\EditarDiscapacidad.aspx.cs">
+      <DependentUpon>EditarDiscapacidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Perfil\EditarDiscapacidad.aspx.designer.cs">
+      <DependentUpon>EditarDiscapacidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WebForm7.aspx.cs">
+      <DependentUpon>WebForm7.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WebForm7.aspx.designer.cs">
+      <DependentUpon>WebForm7.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Pages\Layout.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -102,6 +173,7 @@
       <Name>CapaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

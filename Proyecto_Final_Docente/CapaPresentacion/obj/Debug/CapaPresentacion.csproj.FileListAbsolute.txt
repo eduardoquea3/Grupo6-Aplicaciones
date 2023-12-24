@@ -61,3 +61,5 @@ E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaPresentacion\obj\Debug\CapaPrese
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaPresentacion\bin\CapaDatos.dll
+E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaPresentacion\bin\CapaDatos.pdb
