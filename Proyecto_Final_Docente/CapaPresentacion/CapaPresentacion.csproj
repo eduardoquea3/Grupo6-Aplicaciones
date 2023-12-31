@@ -70,6 +70,7 @@
     <Content Include="css\EditarDiscapacidad.css" />
     <Content Include="css\layout.css" />
     <Content Include="css\login.css" />
+    <Content Include="css\password.css" />
     <Content Include="css\perfil.css" />
     <Content Include="imagenes\colegio.png" />
     <Content Include="imagenes\logo.png" />
@@ -84,7 +85,8 @@
     <Content Include="Pages\Experiencia.aspx" />
     <Content Include="Pages\Cursos.aspx" />
     <Content Include="Pages\Perfil\EditarDiscapacidad.aspx" />
-    <Content Include="Pages\WebForm7.aspx" />
+    <Content Include="Pages\Perfil\EliminarDiscapacidad.aspx" />
+    <Content Include="RecuperarPass.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -144,14 +146,21 @@
     <Compile Include="Pages\Perfil\EditarDiscapacidad.aspx.designer.cs">
       <DependentUpon>EditarDiscapacidad.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\WebForm7.aspx.cs">
-      <DependentUpon>WebForm7.aspx</DependentUpon>
+    <Compile Include="Pages\Perfil\EliminarDiscapacidad.aspx.cs">
+      <DependentUpon>EliminarDiscapacidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\WebForm7.aspx.designer.cs">
-      <DependentUpon>WebForm7.aspx</DependentUpon>
+    <Compile Include="Pages\Perfil\EliminarDiscapacidad.aspx.designer.cs">
+      <DependentUpon>EliminarDiscapacidad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecuperarPass.aspx.cs">
+      <DependentUpon>RecuperarPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperarPass.aspx.designer.cs">
+      <DependentUpon>RecuperarPass.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

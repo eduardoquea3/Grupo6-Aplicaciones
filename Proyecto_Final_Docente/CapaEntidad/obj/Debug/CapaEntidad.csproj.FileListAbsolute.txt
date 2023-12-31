@@ -4,3 +4,9 @@ E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.cs
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.dll
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.pdb
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\bin\Debug\CapaEntidad.dll
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\bin\Debug\CapaEntidad.pdb
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.dll
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.pdb

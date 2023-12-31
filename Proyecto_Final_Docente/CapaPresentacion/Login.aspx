@@ -40,6 +40,7 @@
             <label>Contraseña</label>
             <asp:TextBox ID="txtpassword2" runat="server" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
             <asp:Button ID="btnlogin" runat="server" CssClass="btn" Text="Sign in" OnClick="btnlogin_Click"/>
+            <asp:HyperLink ID="hlpass" runat="server" CssClass="recuperar">¿Olvidaste tu contraseña?</asp:HyperLink>
         </section>
         <section class="capa" id="capa">
             <div class="toggle">

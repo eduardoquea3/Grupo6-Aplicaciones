@@ -142,7 +142,7 @@ label {
   gap: 10px;
   place-content: center;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 60px);
+  grid-template-rows: repeat(7, 60px);
 }
 
 .login {
@@ -218,4 +218,15 @@ img {
 
 #cambio {
   transition: left 200ms;
+}
+
+#hlpass {
+  grid-row: 7;
+  grid-column: 2/ 5;
+  text-align: center;
+  color: var(--segundo);
+  &:hover {
+    color: var(--primero);
+    cursor: default;
+  }
 }

@@ -16,7 +16,7 @@ as
   insert Usuario_Docente
   (nombre,apeP,apeM,username,tipo,doc,correo,contra)
 	values
-	(@nombre,@apeP,@apeM,@username,@tipo,@doc,@correo,@contra)
+	(@nombre,@apeP,@apeM,@username,@tipo,@doc,@correo,ENCRYPTBYPASSPHRASE('password',@contra))
 go
 
 --NOTE: valiar si el usuario existe
@@ -36,9 +36,19 @@ create proc sp_Login
 as
   select id
   from Usuario_Docente
-  where correo=@correo and contra=@contra;
+  where correo=@correo and DECRYPTBYPASSPHRASE('password',contra)=@contra;
 go
 
+create proc sp_L_password
+	@correo varchar(50)
+as
+	if exists(select 1 from Usuario_Docente where correo=@correo)
+	begin
+		select
+			CONVERT(varchar(50), DECRYPTBYPASSPHRASE('password', contra)) AS DatosDesencriptados
+		FROM Usuario_Docente
+		where correo=@correo;
+	end
 -------------------------------------------------------------------------
 
 --TODO: Seccion del inicio
@@ -59,7 +69,7 @@ begin
   set nocount on;
   if exists ( select 1 from RegistroDocente where id = @id )
     select sexo,estadoCivil,direccion,telefono,
-    celular,rd.ubigeo,dpto,prov,distrito,foto,fNacimiento
+    celular,rd.ubigeo,dpto,prov,distrito,foto,fNacimiento,
     precio_Hora
     from RegistroDocente rd inner join
     Ubigeo u on rd.ubigeo=u.ubigeo
@@ -100,40 +110,55 @@ as
   where ud.id=@id
 go
 
+create proc sp_I_listarDiscapacidades
+  @id int
+as
+  select *
+  from Discapacidad
+  where id=@id
+
 -------------------------------------------------------------------------
 
 --TODO: Seccion del datos adicionales
 
 --NOTE: registrar datos ( ingresar o actualizar )
 create proc sp_R_ingresarDatos
-  @id int,@sexo nvarchar(20),@civil nvarchar(20),
-  @direc nvarchar(50),@ubigeo varchar(6),@telefono nvarchar(20),@celular nvarchar(20),
-  @foto nvarchar(200),@fNacimiento date,@precio decimal(10,2)
+	@id int,@sex varchar(20),@civil varchar(20),
+	@direc varchar(50),@ubigeo varchar(6),@telefono varchar(20),
+	@celular varchar(20),@foto varchar(50),@fNac date,@precio decimal
 as
 begin
-  select * from RegistroDocente
+select * from RegistroDocente
   where id=@id
   if @@ROWCOUNT > 0
   begin
     update RegistroDocente
     set
-    sexo = @sexo,
+    sexo = @sex,
     estadoCivil = @civil,
     direccion = @direc,
+	ubigeo = @ubigeo,
     telefono = @telefono,
     celular = @celular,
     foto = @foto,
-    fNacimiento = @fNacimiento,
-    fModficacion = format(getdate(),'dd-MM-yyyy'),
+    fNacimiento = @fNac,
+    fModficacion = getdate(),
     precio_Hora = @precio
     where id=@id
   end;
   else
   begin
   insert RegistroDocente (id,sexo,estadoCivil,direccion,ubigeo,telefono,celular,foto,fNacimiento,fRegistro,fModficacion,precio_Hora)
-  values (@id,@sexo,@civil,@direc,@ubigeo,@telefono,@celular,@foto,@fNacimiento,format(getdate(),'dd-MM-yyyy'),format(getdate(),'dd-MM-yyyy'),@precio)
+  values (@id,@sex,@civil,@direc,@ubigeo,@telefono,@celular,@foto,@fNac,getdate(),getdate(),@precio)
   end
 end
+GO
+
+create proc sp_R_obtenerUbigeo
+  @dpto varchar(30),@prov varchar(30),@dist varchar(30)
+as
+  select ubigeo from Ubigeo
+  where dpto=@dpto and prov=@prov and distrito=@dist
 
 create proc sp_R_actualizarDatosUsuario
   @id int,@username nvarchar(50),@correo nvarchar(50)
@@ -145,19 +170,109 @@ as
 go
 
 create proc sp_R_newPassword
-  @id int,@contra nvarchar(10),@new nvarchar(10)
+  @id int,@contra varchar(10),@new varchar(10)
+as
+  update Usuario_Docente
+  set contra=ENCRYPTBYPASSPHRASE('password',@new)
+  where DECRYPTBYPASSPHRASE('password',contra)=@contra and id=@id
+
+-------------------------------------------------------------------------
+
+--TODO: Seccion del discapacidades
+
+--NOTE: agregar discapacidades
+create proc sp_R_agregarDiscapacidad
+  @id int,@nombre varchar(50),@descripcion text
+as
+  insert Discapacidad (id,discapacidad,descDiscapacidad)
+  values (@id,@nombre,@descripcion)
+
+--NOTE: eliminar discapacidades
+create proc sp_R_eliminarDiscapacidad
+  @id int,@idD int
+as
+  delete from Discapacidad
+  where id=@id and idDiscapacidad=@idD
+
+--NOTE: actualizar discapacidades
+create proc sp_R_actualizarDiscapacidad
+  @id int,@idD int,@dis varchar(50),@descrip text
+as
+  update Discapacidad
+  set discapacidad=@dis,
+  descDiscapacidad=@descrip
+  where id=@id and idDiscapacidad=@idD
+
+--NOTE: obtener discapacidades
+create proc sp_R_obtenerDiscapacidad
+  @id int,@idD int
+as
+  select * from Discapacidad
+  where id=@id and idDiscapacidad=@idD
+
+-------------------------------------------------------------------------
+--TODO: listando Ubigeo
+create proc sp_listarDpto
+as
+  select dpto from Ubigeo group by dpto
+
+create proc sp_listarProv
+  @dpto varchar(30)
+as
+  select prov from Ubigeo
+  where dpto=@dpto
+  group by prov
+
+create proc sp_listarDist
+  @dpto varchar(30),@prov varchar(30)
+as
+  select distrito from Ubigeo
+  where dpto=@dpto and prov=@prov
+  group by distrito
+
+-------------------------------------------------------------------------
+--TODO: procedimientos de datos academicos
+create proc sp_A_agregarDatos
+  @id int,@titulo varchar(100),@insti varchar(100),@fecha date,@pdf varchar(50)
+as
+	insert DatosAcademicos (id,titulo,centroEstudios,fechaGrado,subirTitulo)
+	values (@id,@titulo,@insti,@fecha,@pdf)
+
+create proc sp_A_eliminarDatos
+  @id int,@titulo varchar(100)
+as
+  delete from DatosAcademicos
+  where id=@id and titulo=@titulo
+-------------------------------------------------------------------------
+--TODO: procedimientos de experencias
+create proc sp_E_agregarExperiencia
+	@id int,@fI date,@fF date,@cargo varchar(50),@empresa varchar(100),@certi varchar(50)
+as
+	insert Experencias (id,f_Inicio,f_Fin,cargo,empresa,certificado)
+	values (@id,@fI,@fF,@cargo,@empresa,@certi)
+
+create proc sp_E_eliminarExperiencia
+  @id int,@cargo varchar(100),@emp varchar(100)
+as
+  delete from Experencias
+  where id=@id and cargo=@cargo and empresa=@emp
+-------------------------------------------------------------------------
+--TODO: procedimientos de cursos
+create proc sp_C_addCursoD
+	@id int,@idC int
 as
 begin
-  select * from Usuario_Docente
-  where contra=@contra and id=@id
-  if @@ROWCOUNT > 0
-  begin
-    update Usuario_Docente
-    set contra=@new
-    where contra=@contra and id=@id
-    return 'Se realizo correctamente'
-  end
-  begin
-    return 'No se realizo correctamente'
-  end
+	if not exists(select 1 from Curso_Dictado where id=@id and idCurso=@idC)
+	begin
+		declare @cant int
+		select @cant=COUNT(*)
+		from Curso_Dictado
+		where id=@id
+
+		if @cant<5
+		begin
+			insert into Curso_Dictado(id,idCurso)
+			values(@id,@idC)
+		end
+	end
 end

@@ -9,3 +9,14 @@ E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.cs
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.dll
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.pdb
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaNegocio.dll
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaNegocio.pdb
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaDatos.dll
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaEntidad.dll
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaDatos.pdb
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaNegocio\bin\Debug\CapaEntidad.pdb
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.dll
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaNegocio\obj\Debug\CapaNegocio.pdb

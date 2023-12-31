@@ -7,3 +7,12 @@ E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.csproj
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.dll
 E:\C#\Proyecto_final\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.pdb
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaDatos\bin\Debug\CapaDatos.dll
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaDatos\bin\Debug\CapaDatos.pdb
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaDatos\bin\Debug\CapaEntidad.dll
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaDatos\bin\Debug\CapaEntidad.pdb
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.dll
+E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaDatos\obj\Debug\CapaDatos.pdb

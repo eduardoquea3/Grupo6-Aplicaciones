@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Layout.Master" AutoEventWireup="true" CodeBehind="EditarDiscapacidad.aspx.cs" Inherits="CapaPresentacion.Pages.WebForm6" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-  <link rel="stylesheet" href="../css/EditarDiscapacidad.css"/>
+  <link rel="stylesheet" href="../../css/EditarDiscapacidad.css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <section>
@@ -10,7 +10,7 @@
       <asp:TextBox ID="txtdiscapacidad" runat="server"></asp:TextBox>
       <label>Descripcion de la discapacidad</label>
       <asp:TextBox ID="txtdescDiscapacidad" runat="server" TextMode="MultiLine"></asp:TextBox>
-      <asp:Button ID="btnagregar" runat="server" Text="Agregar" />
+      <asp:Button ID="btnagregar" runat="server" Text="Agregar" CssClass="btn"/>
     </form>
   </section>
 </asp:Content>

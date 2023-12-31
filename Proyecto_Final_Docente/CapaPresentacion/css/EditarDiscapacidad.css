@@ -1,8 +1,8 @@
 ﻿form{
   width: 800px;
-  height: 500px;
+  min-height: 500px;
   display: flex;
-  padding: 0 10%;
+  padding: 2% 10%;
   justify-content: center;
   align-items: start;
   background: var(--tercero);
@@ -25,17 +25,29 @@ label{
 input,textarea{
   border-bottom: 2px solid var(--primero);
   border-radius: 8px;
+  padding: 5px 10px !important;
   width: 80%;
   height: 44px;
+  outline: none;
+  font-size: 0.8rem;
 }
 textarea{
   height: 120px;
 }
 
-input[type="submit"]{
-  border: none;
-  background: var(--primero);
-  color: white;
-  padding: 6px 15px;
-  width: 100px;
+.btn {
+  height: 44px;
+  width: 150px;
+  border-radius: 15px;
+  border: 1px solid var(--segundo);
+  color: var(--segundo);
+  font-weight: 500;
+  font-size: 18px;
+  background: var(--tercero);
+  transition: all 0.2s;
+  &:hover {
+    color: var(--primero);
+    background: var(--cuarto);
+    border: 1px solid var(--segundo);
+  }
 }

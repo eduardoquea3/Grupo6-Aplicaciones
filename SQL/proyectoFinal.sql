@@ -1,20 +1,26 @@
-create database ProyectoFinal;
+if not exists (select 1 from sys.databases where name = 'ProyectoFinal')
+  create database ProyectoFinal
 
 use ProyectoFinal;
 
+--TODO: Crear tabla de los tipos de documento
+create table TipoDocumento(
+  id int primary key,
+  tipo varchar(20)
+)
 --TODO: Crear tabla login
-create table Usuario_Docente
+create table UsuarioDocente
 (
   id int identity primary key,
   nombre varchar(50)not null,
   apeP varchar(50)not null,
   apeM varchar(50)null,
   username varchar(100)not null,
-  tipo varchar(30)not null,
+  tipo int not null,
   doc bigint not null,
   correo varchar(50)not null,
-  -- contra varchar(10)not null,
   contra varbinary  not null,
+  foreign key (tipo) references TipoDocumento(id)
 );
 --TODO: Crear tabla ubigeo
 create table Ubigeo
@@ -24,59 +30,65 @@ create table Ubigeo
   prov nvarchar(30),
   distrito nvarchar(30),
 )
+--TODO: Crear tabla de los posibles estados civiles
+create table EstadoCivil(
+  id int primary key,
+  estado varchar(30)
+)
 --TODO: Crear tabla de datos del docente
---NOTE: Esta tabla tiene dependencia de Usuario_Docente y Ubigeo
+--NOTE: Esta tabla tiene dependencia de UsuarioDocente y Ubigeo
 create table RegistroDocente
 (
-  id int,
-  sexo varchar(15),
-  estadoCivil varchar(20),
-  direccion varchar(50),
-  ubigeo nvarchar (6),
-  telefono varchar(20),
-  celular varchar (20),
-  foto varchar(50),
-  fNacimiento date,
-  fRegistro date,
-  fModficacion date,
-  precio_Hora decimal(10,2),
-  foreign key (id) references  Usuario_Docente(id),
-  foreign key (ubigeo) references Ubigeo(ubigeo)
+  id int not null,
+  sexo varchar(15)not null,
+  estadoCivil int not null,
+  direccion varchar(50)not null,
+  ubigeo nvarchar (6)not null,
+  telefono varchar(20)not null,
+  celular varchar (20)not null,
+  foto varchar(50)not null,
+  fNacimiento date not null,
+  fRegistro date not null,
+  fModficacion date not null,
+  precio_Hora decimal(10,2)not null,
+  foreign key (id) references  UsuarioDocente(id),
+  foreign key (ubigeo) references Ubigeo(ubigeo),
+  foreign key (estadoCivil) references EstadoCivil(id)
 );
 --TODO: Crear tabla de discapacidad
---NOTE: Esta tabla tiene dependencia de Usuario_Docente
+--NOTE: Esta tabla tiene dependencia de UsuarioDocente
 create table Discapacidad
 (
-  id int,
+  id int not null,
   idDiscapacidad int identity primary key,
-  discapacidad varchar(50),
-  descDiscapacidad text,
-  foreign key (id) references Usuario_Docente(id)
+  discapacidad varchar(50) not null,
+  descDiscapacidad text not null,
+  foreign key (id) references UsuarioDocente(id)
 )
 --TODO: Crear tabla de datos academicos del docente
---NOTE: Esta tabla tiene dependencia de Usuario_Docente
+--NOTE: Esta tabla tiene dependencia de UsuarioDocente
 create table DatosAcademicos
 (
   idDatos int identity primary key,
-  id int,
-  titulo varchar (100),
-  centroEstudios varchar (100),
-  fechaGrado date,
-  subirTitulo varchar (50),
-  foreign key (id) references Usuario_Docente(id)
+  id int not null,
+  titulo varchar (100)not null,
+  centroEstudios varchar (100)not null,
+  fechaGrado date not null,
+  subirTitulo varchar (50)not null,
+  foreign key (id) references UsuarioDocente(id)
 );
 --TODO: Crear tabla de experiencias del docente
---NOTE: Esta tabla tiene dependencia de Usuario_Docente
+--NOTE: Esta tabla tiene dependencia de UsuarioDocente
 create table Experencias
 (
   idExpe int identity primary key,
-  id int,
-  f_Inicio date,
-  f_Fin date,
-  cargo varchar(100),
-  empresa varchar(100),
-  certificado varchar (100),
-  foreign key (id) references Usuario_Docente(id)
+  id int not null,
+  f_Inicio date not null,
+  f_Fin date not null,
+  cargo varchar(100)not null,
+  empresa varchar(100)not null,
+  certificado varchar (100)not null,
+  foreign key (id) references UsuarioDocente(id)
 );
 --TODO: Crear tabla de los cursos disponible
 create table Cursos
@@ -85,11 +97,11 @@ create table Cursos
   curso varchar (100),
 );
 --TODO: Crear tabla de los cursos que dictara el docente
---NOTE: Esta tabla tiene dependencia de Usuario_Docente y Cursos
-create table Curso_Dictado
+--NOTE: Esta tabla tiene dependencia de UsuarioDocente y Cursos
+create table CursoDictado
 (
-  idCurso int,
-  id int,
-  foreign key (id) references Usuario_Docente(id),
+  idCurso int not null,
+  id int not null,
+  foreign key (id) references UsuarioDocente(id),
   foreign key (idCurso) references Cursos(idCurso)
 );

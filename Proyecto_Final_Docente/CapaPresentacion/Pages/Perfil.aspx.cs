@@ -11,9 +11,9 @@ namespace CapaPresentacion.Pages
     {
       if (!IsPostBack)
       {
-        id = int.Parse(Request.QueryString["id"].ToString());
-        Usuario(id);
-        Registro(id);
+        //id = int.Parse(Request.QueryString["id"].ToString());
+        //Usuario(id);
+        //Registro(id);
       }
     }
 

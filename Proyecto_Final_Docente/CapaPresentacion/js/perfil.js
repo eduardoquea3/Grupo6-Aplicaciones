@@ -1,10 +1,12 @@
-﻿const close = document.getElementById("close");
-const form = document.querySelector("form");
-const div = document.querySelector("div#info");
-const add = document.querySelector("div#Discapacidad");
-const open = document.getElementById("addDiscapacidad");
+﻿const id = (n) => document.getElementById(n)
+const one = (n) => document.querySelector(n)
+const close = id("close");
+const open = id("addDiscapacidad");
+const form = one("form");
+const div = one("div#info");
+const add = one("div#Discapacidad");
 
-open.addEventListener("click",()=>{
+open.addEventListener("click", () => {
   add.classList.toggle("hidden")
   div.classList.toggle("hidden")
   div.classList.toggle("container")

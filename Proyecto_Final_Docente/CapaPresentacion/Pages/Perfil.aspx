@@ -10,9 +10,13 @@
 
             <h1 class="title">Mi perfil</h1>
 
-            <picture class="">
+            <picture class="foto">
               <asp:Image ID="imgPerfil" runat="server" CssClass="" ImageUrl="~/imagenes/user.png" />
-              <asp:FileUpload ID="fufoto" runat="server" />
+              <div class="fileupload">
+                <label for="ContentPlaceHolder1_fufoto" id="archivo">Subir archivo:</label>
+                <p id="nombreArchivo">hola</p>
+                <asp:FileUpload ID="fufoto" runat="server" />
+              </div>
             </picture>
             <label>Usuario</label>
             <label>Nombres</label>
@@ -52,6 +56,7 @@
                   <asp:BoundField DataField="discapacidad" HeaderText="Discapacidad" />
                   <asp:BoundField DataField="descDiscapacidad" HeaderText="Descripción de la discapacidad" />
                   <asp:HyperLinkField DataNavigateUrlFields="id,idDiscapacidad" DataNavigateUrlFormatString="./Perfil/EditarDiscapacidad.aspx?id=[0]&idD={1}" Text="Modificar" />
+                  <asp:HyperLinkField DataNavigateUrlFields="id,idDiscapacidad" DataNavigateUrlFormatString="./Perfil/EliminarDiscapacidad.aspx?id=[0]&idD={1}" Text="Eliminar" />
                 </Columns>
               </asp:GridView>
               <input type="button" id="addDiscapacidad" class="btn" value="Agregar Discapacidad" />
