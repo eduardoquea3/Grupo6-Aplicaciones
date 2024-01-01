@@ -55,8 +55,8 @@
                 <Columns>
                   <asp:BoundField DataField="discapacidad" HeaderText="Discapacidad" />
                   <asp:BoundField DataField="descDiscapacidad" HeaderText="Descripción de la discapacidad" />
-                  <asp:HyperLinkField DataNavigateUrlFields="id,idDiscapacidad" DataNavigateUrlFormatString="./Perfil/EditarDiscapacidad.aspx?id=[0]&idD={1}" Text="Modificar" />
-                  <asp:HyperLinkField DataNavigateUrlFields="id,idDiscapacidad" DataNavigateUrlFormatString="./Perfil/EliminarDiscapacidad.aspx?id=[0]&idD={1}" Text="Eliminar" />
+                  <asp:HyperLinkField DataNavigateUrlFields="id,idDiscapacidad" DataNavigateUrlFormatString="./Perfil/EditarDiscapacidad.aspx?id={0}&idD={1}" Text="Modificar" />
+                  <asp:HyperLinkField DataNavigateUrlFields="id,idDiscapacidad" DataNavigateUrlFormatString="./Perfil/EliminarDiscapacidad.aspx?id={0}&idD={1}" Text="Eliminar" />
                 </Columns>
               </asp:GridView>
               <input type="button" id="addDiscapacidad" class="btn" value="Agregar Discapacidad" />

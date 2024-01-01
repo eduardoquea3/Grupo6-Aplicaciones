@@ -80,7 +80,7 @@ end
 create proc sp_I_listarDatosAcademicos
   @id int
 as
-  select titulo,centroEstudios,fechaGrado
+  select id,idDatos,titulo,centroEstudios,fechaGrado
   from DatosAcademicos
   where id=@id
 go
@@ -93,19 +93,13 @@ as
   where id=@id
 go
 
---NOTE: listar cursos
-create proc sp_I_listarCursos
-as
-  select curso from Cursos
-go
-
 --NOTE: listar cursos que dictara el usuario
 create proc sp_I_listarCursosDictados
   @id int
 as
   select curso
   from Cursos c
-  inner join Curso_Dictado cd on c.idCurso=cd.idCurso
+  inner join CursoDictado cd on c.idCurso=cd.idCurso
   inner join Usuario_Docente ud on cd.id=ud.id
   where ud.id=@id
 go
@@ -239,10 +233,10 @@ as
 	values (@id,@titulo,@insti,@fecha,@pdf)
 
 create proc sp_A_eliminarDatos
-  @id int,@titulo varchar(100)
+  @id int,@idA int
 as
   delete from DatosAcademicos
-  where id=@id and titulo=@titulo
+  where id=@id and idDatos=@idA
 -------------------------------------------------------------------------
 --TODO: procedimientos de experencias
 create proc sp_E_agregarExperiencia
@@ -262,17 +256,34 @@ create proc sp_C_addCursoD
 	@id int,@idC int
 as
 begin
-	if not exists(select 1 from Curso_Dictado where id=@id and idCurso=@idC)
+	if not exists(select 1 from CursoDictado where id=@id and idCurso=@idC)
 	begin
 		declare @cant int
 		select @cant=COUNT(*)
-		from Curso_Dictado
+		from CursoDictado
 		where id=@id
 
 		if @cant<5
 		begin
-			insert into Curso_Dictado(id,idCurso)
+			insert into CursoDictado(id,idCurso)
 			values(@id,@idC)
 		end
 	end
 end
+
+--TODO: listar cursos
+create proc sp_C_listarCursos
+  @id int
+as
+  select c.idCurso,c.curso
+  from Cursos c
+  left join CursoDictado cd
+  on c.idCurso=cd.idCurso and cd.id=@id
+  where cd.idCurso is null;
+
+--TODO: obtener curso
+create proc sp_C_obtenerCurso
+	@idC int
+as
+	select curso from Cursos
+	where idCurso=@idC

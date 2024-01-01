@@ -1,0 +1,78 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;500;700&display=swap");
+
+:root {
+  --primero: #5579cb;
+  --segundo: #3b698e;
+  --tercero: #daeeff;
+  --cuarto: #b5deff;
+  --quinto: #ffffff;
+  --fondo: #ebf1f4;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Saira Semi Condensed", sans-serif;
+  color: var(--segundo);
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--fondo);
+}
+
+form {
+  background: var(--quinto);
+  height: 400px;
+  width: 700px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(4,25%);
+  grid-template-rows: repeat(3,1fr);
+  padding: 5% 1%;
+}
+
+h2 {
+  text-align: center;
+  color: var(--segundo);
+  font-size: 40px;
+  grid-column: span 4;
+}
+
+p{
+  grid-column: span 4;
+  font-size: 26px;
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+  height: 44px;
+  grid-row-start: 3;
+  grid-column: span 2;
+  width: 180px;
+  border-radius: 15px;
+  border: 0;
+  color: var(--segundo);
+  font-weight: 500;
+  font-size: 18px;
+  background: var(--tercero);
+  transition: all 0.2s;
+  margin: 0 calc(50% - 90px);
+  &:hover {
+    color: var(--primero);
+    background: var(--cuarto);
+    border: 1px solid var(--segundo);
+  }
+}
+
+div.aspNetHidden{
+  display: none;
+}

@@ -19,7 +19,7 @@ create table UsuarioDocente
   tipo int not null,
   doc bigint not null,
   correo varchar(50)not null,
-  contra varbinary  not null,
+  contra varbinary(max)not null,
   foreign key (tipo) references TipoDocumento(id)
 );
 --TODO: Crear tabla ubigeo
@@ -40,7 +40,7 @@ create table EstadoCivil(
 create table RegistroDocente
 (
   id int not null,
-  sexo varchar(15)not null,
+  sexo int not null,
   estadoCivil int not null,
   direccion varchar(50)not null,
   ubigeo nvarchar (6)not null,
@@ -53,7 +53,8 @@ create table RegistroDocente
   precio_Hora decimal(10,2)not null,
   foreign key (id) references  UsuarioDocente(id),
   foreign key (ubigeo) references Ubigeo(ubigeo),
-  foreign key (estadoCivil) references EstadoCivil(id)
+  foreign key (estadoCivil) references EstadoCivil(id),
+  foreign key (sexo) references Sexo(id)
 );
 --TODO: Crear tabla de discapacidad
 --NOTE: Esta tabla tiene dependencia de UsuarioDocente

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NCurso.cs" />
     <Compile Include="NInicio.cs" />
     <Compile Include="NLogin.cs" />
     <Compile Include="NRegistro.cs" />
