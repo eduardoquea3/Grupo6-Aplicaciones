@@ -1,6 +1,4 @@
-﻿using CapaEntidad;
-using CapaNegocio;
-using System;
+﻿using System;
 
 namespace CapaPresentacion.Pages
 {
@@ -12,14 +10,14 @@ namespace CapaPresentacion.Pages
     {
       if (!IsPostBack)
       {
-        id = int.Parse(Request.QueryString["id"].ToString());
-        ULogin user = new NInicio().datosUsuario(id);
-        lblnombre.Text = user.nombre;
-        lblapellido.Text = user.apellidoPat + " " + user.apellidoMat;
-        lbluser.Text = user.username;
-        lblcorreo.Text = user.correo;
-        lbltipo.Text = user.tipo;
-        lbldocumento.Text = user.documento.ToString();
+        //id = int.Parse(Request.QueryString["id"].ToString());
+        //ULogin user = new NInicio().datosUsuario(id);
+        //lblnombre.Text = user.nombre;
+        //lblapellido.Text = user.apellidoPat + " " + user.apellidoMat;
+        //lbluser.Text = user.username;
+        //lblcorreo.Text = user.correo;
+        //lbltipo.Text = user.tipo;
+        //lbldocumento.Text = user.documento.ToString();
       }
     }
   }

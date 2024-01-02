@@ -1,5 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--segundo);
+  box-sizing: border-box;
+}
+
 fieldset {
   width: 1400px;
+  min-height: 200px;
   height: auto;
   border: 2px solid rgb(87 153 255/0.4);
   background: var(--tercero);
@@ -37,6 +45,15 @@ section.start {
   }
 }
 
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+div.aspNetHidden{
+  display: none;
+}
 .start main {
   width: 100%;
   padding: 0 10%;
@@ -59,13 +76,49 @@ section.start {
   }
   & span.datos {
     font-size: 30px;
-    font-weight: 700;
-    grid-column-start: 3;
-    grid-column-start: 6;
+    font-weight: 500;
+    grid-column: span 2;
   }
   & label {
     font-size: 30px;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    font-weight: 700;
+    grid-column: span 2;
+  }
+}
+
+.btn {
+  height: 44px;
+  grid-column: span 5;
+  margin-left: calc(50% - 100px);
+  width: 200px;
+  border-radius: 15px;
+  border: 2px solid var(--segundo);
+  color: var(--segundo);
+  font-weight: 500;
+  font-size: 18px;
+  background: var(--tercero);
+  transition: all 0.2s;
+  &:hover {
+    color: var(--primero);
+    background: var(--cuarto);
+    border: 2px solid var(--primero);
+  }
+}
+
+section.extras {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-columns: repeat(4, 20%);
+  padding: 2% 5%;
+  gap: 20px 10px;
+  & label,
+  span {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  & label {
+    font-weight: 700;
+    text-align: center;
   }
 }

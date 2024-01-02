@@ -59,7 +59,7 @@ picture {
     background: var(--cuarto);
     width: 150px;
     height: 45px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding: 5px 10px;
     border-radius: 10px 0 0 10px;
     &:hover {

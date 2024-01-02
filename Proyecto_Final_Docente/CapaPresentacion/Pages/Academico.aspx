@@ -7,11 +7,10 @@
       <h2>Datos Academicos</h2>
       <asp:GridView ID="gvlista" runat="server" CssClass="table">
         <Columns>
-          <asp:BoundField  DataField="fInicio" HeaderText="Fecha de inicio"/>
-          <asp:BoundField  DataField="fFin" HeaderText="Fecha de finalización"/>
-          <asp:BoundField  DataField="cargo" HeaderText="Cargo"/>
-          <asp:BoundField  DataField="empresa" HeaderText="Empresa"/>
-          <asp:HyperLinkField DataNavigateUrlFields="id,idE" DataNavigateUrlFormatString="./Experiencia/Eliminar.aspx?id={0}&idE={1}" Text="Eliminar" />
+          <asp:BoundField  DataField="titulo" HeaderText="Titulo"/>
+          <asp:BoundField  DataField="fFin" HeaderText="Centro de estudios"/>
+          <asp:BoundField  DataField="cargo" HeaderText="Fecha de Grado"/>
+          <asp:HyperLinkField DataNavigateUrlFields="id,idA" DataNavigateUrlFormatString="./Academico/Eliminar.aspx?id={0}&idE={1}" Text="Eliminar" />
         </Columns>
       </asp:GridView>
       <asp:Button ID="btnagregar" runat="server" CssClass="btn" Text="Agregar Experiencia"/>

@@ -61,7 +61,7 @@
         </div>
     </menu>
 
-    <main id="contenido" class="h-auto flex-1 flex ml-[4rem] justify-center items-center transition-all duration-200 ease-in-out">
+    <main id="contenido" class="h-auto flex-1 flex ml-[4rem] justify-center items-center transition-all duration-200 ease-in-out gap-y-[100px] flex-col py-[3%]">
 
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
