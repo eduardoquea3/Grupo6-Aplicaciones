@@ -20,6 +20,7 @@ create table UsuarioDocente
   doc bigint not null,
   correo varchar(50)not null,
   contra varbinary(max)not null,
+  registrado int,
   foreign key (tipo) references TipoDocumento(id)
 );
 --TODO: Crear tabla ubigeo

@@ -14,9 +14,9 @@ create proc sp_AgregarUsuario
 	@contra varchar(50)
 as
   insert UsuarioDocente
-  (nombre,apeP,apeM,username,tipo,doc,correo,contra)
+  (nombre,apeP,apeM,username,tipo,doc,correo,contra,registrado)
 	values
-	(@nombre,@apeP,@apeM,@username,@tipo,@doc,@correo,ENCRYPTBYPASSPHRASE('password',@contra))
+	(@nombre,@apeP,@apeM,@username,@tipo,@doc,@correo,ENCRYPTBYPASSPHRASE('password',@contra),0)
 go
 
 --NOTE: valiar si el usuario existe
@@ -68,12 +68,14 @@ as
 begin
   set nocount on;
   if exists ( select 1 from RegistroDocente where id = @id )
-    select sexo,estadoCivil,direccion,telefono,
+    select s.tipo as sexo,e.estado as estadoCivil,direccion,telefono,
     celular,rd.ubigeo,dpto,prov,distrito,foto,fNacimiento,
     precio_Hora
     from RegistroDocente rd inner join
-    Ubigeo u on rd.ubigeo=u.ubigeo
-    where id=@id
+    Ubigeo u on rd.ubigeo=u.ubigeo inner join
+	  Sexo s on rd.sexo=s.id inner join
+	  EstadoCivil e on rd.estadoCivil=e.id
+    where rd.id=10
 end
 
 --NOTE: listar datos academicos del usuario
@@ -89,7 +91,7 @@ go
 create proc sp_I_listarExperiencias
   @id int
 as
-  select cargo,empresa,f_Inicio,f_Fin from Experencias
+  select id,idExpe,cargo,empresa,f_Inicio,f_Fin from Experencias
   where id=@id
 go
 
@@ -109,6 +111,13 @@ create proc sp_I_listarDiscapacidades
 as
   select *
   from Discapacidad
+  where id=@id
+
+create proc sp_registro
+  @id int
+as
+  update UsuarioDocente
+  set registrado = 1
   where id=@id
 
 -------------------------------------------------------------------------
