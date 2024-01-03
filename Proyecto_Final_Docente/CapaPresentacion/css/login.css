@@ -148,7 +148,8 @@ label {
 .login {
   & label,
   input,
-  h2 {
+  h2,
+  a {
     grid-column: 2/ 5;
     margin-right: 0;
   }
