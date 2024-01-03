@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -51,6 +52,38 @@ namespace CapaDatos
         }
       }
       return user;
+    }
+    public List<UDiscapacidad> listaDisc(int id)
+    {
+      List<UDiscapacidad> lista = new List<UDiscapacidad>();
+      using (SqlConnection cn = new Conection().conectar())
+      {
+        SqlCommand cmd = new SqlCommand();
+        try
+        {
+          cmd.Connection = cn;
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.CommandText = "sp_I_listarDiscapacidades";
+          cmd.Parameters.AddWithValue("@id", id);
+          cn.Open();
+          using (SqlDataReader dr = cmd.ExecuteReader())
+          {
+            while (dr.Read())
+            {
+              lista.Add(new UDiscapacidad(dr.GetInt32(0), dr.GetInt32(1), dr.GetString(2), dr.GetString(3)));
+            }
+          }
+        }
+        catch (Exception ex)
+        {
+          throw new Exception(ex.Message);
+        }
+        finally
+        {
+          cn.Dispose();
+        }
+      }
+      return lista;
     }
   }
 }

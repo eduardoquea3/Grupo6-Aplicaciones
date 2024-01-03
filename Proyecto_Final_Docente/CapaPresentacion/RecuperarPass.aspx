@@ -14,7 +14,7 @@
     <label>Ingrese su correo:</label>
     <asp:TextBox ID="txtcorreo" runat="server" CssClass="input" TextMode="Email"></asp:TextBox>
     <span>La contraseña le llegara al correo, si es valido.</span>
-    <asp:Button ID="btnrecuperar" runat="server" Text="Enviar" CssClass="btn"/>
+    <asp:Button ID="btnrecuperar" runat="server" Text="Enviar" CssClass="btn" OnClick="btnrecuperar_Click"/>
   </form>
 </body>
 </html>

@@ -40,7 +40,7 @@
           <label>Contraseña</label>
           <asp:TextBox ID="txtpassword2" runat="server" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
           <asp:Button ID="btnlogin" runat="server" CssClass="btn" Text="Sign in" OnClick="btnlogin_Click"/>
-          <asp:LinkButton ID="lbpass" runat="server" CssClass="recuperar" >¿Olvidaste tu contraseña?</asp:LinkButton>
+          <asp:LinkButton ID="lbpass" runat="server" CssClass="recuperar" OnClick="lbpass_Click">¿Olvidaste tu contraseña?</asp:LinkButton>
         </section>
         <section class="capa" id="capa">
             <div class="toggle">

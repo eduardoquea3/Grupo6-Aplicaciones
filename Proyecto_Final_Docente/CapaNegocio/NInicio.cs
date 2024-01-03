@@ -11,5 +11,13 @@ namespace CapaNegocio
     {
       return cat.mostrarUsuario(id);
     }
+    public void registro(int id)
+    {
+      cat.registro(id);
+    }
+    public void newpass(int id, string pass, string newpass)
+    {
+      cat.newpass(id, pass, newpass);
+    }
   }
 }

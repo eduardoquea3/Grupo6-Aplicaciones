@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CapaEntidad;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CapaEntidad;
 
 namespace CapaDatos
 {
@@ -51,6 +47,48 @@ namespace CapaDatos
         }
       }
       return user;
+    }
+    public void registro(int id)
+    {
+      using (SqlConnection cn = new Conection().conectar())
+      {
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = "sp_registro";
+        cmd.Connection = cn;
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.Parameters.AddWithValue("@id", id);
+        cn.Open();
+        cmd.ExecuteNonQuery();
+        cn.Close();
+      }
+    }
+    public void newpass(int id, string pass, string newpass)
+    {
+      using (SqlConnection cn = new Conection().conectar())
+      {
+        SqlCommand cmd = new SqlCommand();
+
+        try
+        {
+          cmd.Connection = cn;
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.CommandText = "sp_R_newPassword";
+          cmd.Parameters.AddWithValue("@id", id);
+          cmd.Parameters.AddWithValue("@contra", pass);
+          cmd.Parameters.AddWithValue("@new", newpass);
+          cn.Open();
+          cmd.ExecuteNonQuery();
+          cn.Close();
+        }
+        catch (Exception ex)
+        {
+          throw new Exception(ex.Message);
+        }
+        finally
+        {
+          cn.Dispose();
+        }
+      }
     }
   }
 }

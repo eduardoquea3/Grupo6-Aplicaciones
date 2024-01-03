@@ -221,10 +221,11 @@ img {
   transition: left 200ms;
 }
 
-#hlpass {
+#lbpass {
   grid-row: 7;
   grid-column: 2/ 5;
-  text-align: center;
+  display: grid;
+  place-content: center;
   color: var(--segundo);
   &:hover {
     color: var(--primero);

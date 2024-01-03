@@ -113,5 +113,36 @@ namespace CapaDatos
       }
       return id;
     }
+    public string password(string correo)
+    {
+      string r = "";
+      using (SqlConnection cn = new Conection().conectar())
+      {
+        try
+        {
+          SqlCommand cmd = new SqlCommand();
+          cmd.Connection = cn;
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.CommandText = "sp_L_password";
+          cmd.Parameters.AddWithValue("@correo", correo);
+          cn.Open();
+          SqlDataReader rd = cmd.ExecuteReader();
+          if (rd.Read())
+          {
+            r = rd.GetString(0);
+          }
+          cn.Close();
+        }
+        catch (Exception ex)
+        {
+          throw new Exception(ex.Message);
+        }
+        finally
+        {
+          cn.Dispose();
+        }
+      }
+      return r;
+    }
   }
 }

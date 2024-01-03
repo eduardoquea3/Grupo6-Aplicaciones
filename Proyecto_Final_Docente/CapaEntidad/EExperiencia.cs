@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CapaEntidad
+﻿namespace CapaEntidad
 {
-  public class Experiencia
+  public class EExperiencia
   {
     public int idE { get; set; }
     public int id { get; set; }
@@ -16,9 +10,9 @@ namespace CapaEntidad
     public string empresa { get; set; }
     public string certificado { get; set; }
 
-    public Experiencia() { }
+    public EExperiencia() { }
 
-    public Experiencia(
+    public EExperiencia(
         int id,
         string fInicio,
         string fFin,
@@ -35,21 +29,21 @@ namespace CapaEntidad
       this.certificado = certificado;
     }
 
-    public Experiencia(
+    public EExperiencia(
         int id,
         int idE,
-        string fInicio,
-        string fFin,
         string cargo,
-        string empresa
+        string empresa,
+        string fInicio,
+        string fFin
     )
     {
       this.id = id;
       this.idE = idE;
-      this.fInicio = fInicio;
-      this.fFin = fFin;
       this.cargo = cargo;
       this.empresa = empresa;
+      this.fInicio = fInicio;
+      this.fFin = fFin;
     }
   }
 }

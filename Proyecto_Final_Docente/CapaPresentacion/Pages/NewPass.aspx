@@ -14,8 +14,8 @@
       <asp:TextBox ID="txtpass" runat="server" CssClass="input" TextMode="Password"></asp:TextBox>
       <label>Nueva Contraseña</label>
       <asp:TextBox ID="txtnewpass" runat="server" CssClass="input" TextMode="Password"></asp:TextBox>
-      <asp:Button ID="btncambiar" runat="server" CssClass="btn" Text="Cambiar" />
-      <asp:Button ID="btncancelar" runat="server" CssClass="btn" Text="Cancelar" />
+      <asp:Button ID="btncambiar" runat="server" CssClass="btn" Text="Cambiar" OnClick="btncambiar_Click" />
+      <asp:Button ID="btncancelar" runat="server" CssClass="btn" Text="Cancelar" OnClick="btncancelar_Click" />
     </form>
 </body>
 </html>

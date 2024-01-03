@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CapaDatos;
+﻿using CapaDatos;
 using CapaEntidad;
+using System.Collections.Generic;
 
 namespace CapaNegocio
 {
@@ -15,6 +11,10 @@ namespace CapaNegocio
     public List<ECurso> listarCursos(int id)
     {
       return cat.listarCursos(id);
+    }
+    public List<CursoD> listaCursosD(int id)
+    {
+      return cat.listarCursosD(id);
     }
   }
 }

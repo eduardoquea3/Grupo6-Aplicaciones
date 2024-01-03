@@ -45,13 +45,13 @@ section.start {
   }
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   gap: 100px;
 }
 
-div.aspNetHidden{
+div.aspNetHidden {
   display: none;
 }
 .start main {
@@ -105,12 +105,13 @@ div.aspNetHidden{
   }
 }
 
-section.extras div{
+section.extras div {
   display: grid;
   place-content: center;
   place-items: center;
   grid-template-columns: repeat(4, 20%);
-  padding: 2% 5%;
+  padding: 2% 2%;
+  width: 90%;
   gap: 20px 10px;
   & label,
   span {
@@ -121,14 +122,41 @@ section.extras div{
     font-weight: 700;
     text-align: center;
   }
+  &:has(table) {
+    padding: 20px;
+  }
 }
 
-section.data{
+section.data {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
-.anuncio{
+.anuncio {
   font-size: 50px;
+}
+
+table tbody {
+  font-size: 20px;
+  & tr:has(th) {
+    background: var(--segundo);
+    & th {
+      color: white;
+    }
+  }
+  & tr:hover > td {
+    background: #f0f0f0;
+    color: var(--primero);
+  }
+  & th,
+  td {
+    padding: 10px 20px;
+    text-align: center;
+  }
+  & td {
+    border: 1px solid #55555544;
+    background: white;
+  }
 }

@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CapaEntidad
+﻿namespace CapaEntidad
 {
-  internal class CursoD
+  public class CursoD
   {
+    public CursoD(int id, int idC, string nombre)
+    {
+      this.id = id;
+      this.idC = idC;
+      this.nombre = nombre;
+    }
+
+    public CursoD() { }
+    public CursoD(string nombre) { this.nombre = nombre; }
+
+    public int id { get; set; }
+    public int idC { get; set; }
+    public string nombre { get; set; }
+
   }
 }

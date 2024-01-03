@@ -41,10 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Academico.cs" />
+    <Compile Include="EAcademico.cs" />
     <Compile Include="ECurso.cs" />
     <Compile Include="CursoD.cs" />
-    <Compile Include="Experiencia.cs" />
+    <Compile Include="EExperiencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UDiscapacidad.cs" />
     <Compile Include="ULogin.cs" />

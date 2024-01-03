@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NAcademico.cs" />
     <Compile Include="NCurso.cs" />
+    <Compile Include="NDiscapacidad.cs" />
+    <Compile Include="NExperiencia.cs" />
     <Compile Include="NInicio.cs" />
     <Compile Include="NLogin.cs" />
     <Compile Include="NRegistro.cs" />

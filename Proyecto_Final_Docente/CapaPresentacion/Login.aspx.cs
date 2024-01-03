@@ -52,5 +52,10 @@ namespace CapaPresentacion
     {
       Response.Write($"<script>alert('{data}')</script>");
     }
+
+    protected void lbpass_Click(object sender, EventArgs e)
+    {
+      Response.Redirect("./RecuperarPass.aspx");
+    }
   }
 }
