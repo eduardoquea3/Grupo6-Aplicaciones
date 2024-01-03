@@ -7,7 +7,7 @@
 
 fieldset {
   width: 1400px;
-  min-height: 200px;
+  min-height: 160px;
   height: auto;
   border: 2px solid rgb(87 153 255/0.4);
   background: var(--tercero);
@@ -105,7 +105,7 @@ div.aspNetHidden{
   }
 }
 
-section.extras {
+section.extras div{
   display: grid;
   place-content: center;
   place-items: center;
@@ -121,4 +121,14 @@ section.extras {
     font-weight: 700;
     text-align: center;
   }
+}
+
+section.data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.anuncio{
+  font-size: 50px;
 }

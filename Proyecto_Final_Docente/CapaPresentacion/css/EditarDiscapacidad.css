@@ -30,6 +30,9 @@ input,textarea{
   height: 44px;
   outline: none;
   font-size: 0.8rem;
+  &[readonly="readonly"]{
+    background: #f5f5f5;
+  }
 }
 textarea{
   height: 120px;
@@ -50,4 +53,10 @@ textarea{
     background: var(--cuarto);
     border: 1px solid var(--segundo);
   }
+}
+div{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }

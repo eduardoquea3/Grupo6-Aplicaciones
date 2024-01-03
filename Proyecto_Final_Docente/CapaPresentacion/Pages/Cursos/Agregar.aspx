@@ -11,6 +11,7 @@
     <form id="form1" runat="server">
       <asp:CheckBoxList ID="cblcurso" runat="server" CssClass="lista"></asp:CheckBoxList>
       <asp:Button ID="btnagregar" runat="server" CssClass="btn" Text="Agregar Curso(s)" OnClick="btnagregar_Click"/>
+      <asp:Button ID="btncancelar" runat="server" CssClass="btn" Text="Cancelar"/>
     </form>
 </body>
 </html>

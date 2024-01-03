@@ -96,6 +96,8 @@ create table Cursos
 (
   idCurso int identity primary key,
   curso varchar (100),
+  idC int,
+  foreign key (idC) references Carrera(id)
 );
 --TODO: Crear tabla de los cursos que dictara el docente
 --NOTE: Esta tabla tiene dependencia de UsuarioDocente y Cursos
@@ -106,3 +108,13 @@ create table CursoDictado
   foreign key (id) references UsuarioDocente(id),
   foreign key (idCurso) references Cursos(idCurso)
 );
+--NOTE: tabla de usuario administrativo
+create table UsuarioAdmin(
+	idUsuario int identity primary key,
+	nombreUsuario varchar(50),
+  contra varchar(10),
+  apellidoPaterno varchar(50),
+  apellidoMaterno varchar(50),
+  nombres varchar(100),
+  PerfilUsuario varchar(50)
+)

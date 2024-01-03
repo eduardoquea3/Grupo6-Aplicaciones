@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaPresentacion.Pages.Cursos
+namespace CapaPresentacion.Pages
 {
 
 
-  public partial class Agregar
+  public partial class NewPass
   {
 
     /// <summary>
@@ -24,22 +24,31 @@ namespace CapaPresentacion.Pages.Cursos
     protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
     /// <summary>
-    /// cblcurso control.
+    /// txtpass control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.CheckBoxList cblcurso;
+    protected global::System.Web.UI.WebControls.TextBox txtpass;
 
     /// <summary>
-    /// btnagregar control.
+    /// txtnewpass control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button btnagregar;
+    protected global::System.Web.UI.WebControls.TextBox txtnewpass;
+
+    /// <summary>
+    /// btncambiar control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button btncambiar;
 
     /// <summary>
     /// btncancelar control.

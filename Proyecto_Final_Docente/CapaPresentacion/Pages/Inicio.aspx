@@ -30,32 +30,35 @@
     </fieldset>
     <fieldset>
       <legend>Datos Personales</legend>
-      <section class="extras">
-        <label>Sexo:</label>
-        <asp:Label ID="lblsexo" runat="server" CssClass="datos">Masculino</asp:Label>
-        <label>Estado Civil:</label>
-        <asp:Label ID="lblestado" runat="server" CssClass="datos">Soltero</asp:Label>
-        <label>Direccion:</label>
-        <asp:Label ID="lbldirec" runat="server" CssClass="datos">Jr. Cusco 435</asp:Label>
-        <label>Departemento:</label>
-        <asp:Label ID="lbldpto" runat="server" CssClass="datos">Lima</asp:Label>
-        <label>Provincia:</label>
-        <asp:Label ID="lblprov" runat="server" CssClass="datos">Lima</asp:Label>
-        <label>Distrito:</label>
-        <asp:Label ID="lbldist" runat="server" CssClass="datos">Lima</asp:Label>
-        <label>Telefono:</label>
-        <asp:Label ID="lbltelefono" runat="server" CssClass="datos">+51 65 9887458</asp:Label>
-        <label>Celular:</label>
-        <asp:Label ID="lblcel" runat="server" CssClass="datos">958412658</asp:Label>
-        <label>Fecha de nacimiento:</label>
-        <asp:Label ID="lblfnac" runat="server" CssClass="datos">17-12-2023</asp:Label>
-        <label>Precio por hora:</label>
-        <asp:Label ID="lblprecio" runat="server" CssClass="datos">S/.60.00</asp:Label>
+      <section class="extras data">
+        <asp:Panel ID="pnvista" runat="server" Visible="false">
+          <label>Sexo:</label>
+          <asp:Label ID="lblsexo" runat="server" CssClass="datos">Masculino</asp:Label>
+          <label>Estado Civil:</label>
+          <asp:Label ID="lblestado" runat="server" CssClass="datos">Soltero</asp:Label>
+          <label>Direccion:</label>
+          <asp:Label ID="lbldirec" runat="server" CssClass="datos">Jr. Cusco 435</asp:Label>
+          <label>Departemento:</label>
+          <asp:Label ID="lbldpto" runat="server" CssClass="datos">Lima</asp:Label>
+          <label>Provincia:</label>
+          <asp:Label ID="lblprov" runat="server" CssClass="datos">Lima</asp:Label>
+          <label>Distrito:</label>
+          <asp:Label ID="lbldist" runat="server" CssClass="datos">Lima</asp:Label>
+          <label>Telefono:</label>
+          <asp:Label ID="lbltelefono" runat="server" CssClass="datos">+51 65 9887458</asp:Label>
+          <label>Celular:</label>
+          <asp:Label ID="lblcel" runat="server" CssClass="datos">958412658</asp:Label>
+          <label>Fecha de nacimiento:</label>
+          <asp:Label ID="lblfnac" runat="server" CssClass="datos">17-12-2023</asp:Label>
+          <label>Precio por hora:</label>
+          <asp:Label ID="lblprecio" runat="server" CssClass="datos">S/.60.00</asp:Label>
+        </asp:Panel>
+        <asp:Label ID="lblnopersonales" Visible="true" runat="server" CssClass="anuncio">No es encontraron datos Personales</asp:Label>
       </section>
     </fieldset>
     <fieldset>
       <legend>Datos Académicos</legend>
-      <section class="academicos">
+      <section class="academicos data">
         <asp:GridView ID="gvacademicos" runat="server" CssClass="table">
           <Columns>
             <asp:BoundField DataField="titulo" HeaderText="Titulo" />
@@ -63,11 +66,12 @@
             <asp:BoundField DataField="fGrado" HeaderText="Fecha de Grado" />
           </Columns>
         </asp:GridView>
+        <asp:Label ID="lblnoacademico" Visible="true" runat="server" CssClass="anuncio">No es encontraron datos académicos</asp:Label>
       </section>
     </fieldset>
     <fieldset>
       <legend>Experiencias</legend>
-      <section class="experiencia">
+      <section class="experiencia data">
         <asp:GridView ID="gvexpe" runat="server" CssClass="table">
           <Columns>
             <asp:BoundField DataField="titulo" HeaderText="Titulo" />
@@ -75,11 +79,12 @@
             <asp:BoundField DataField="fGrado" HeaderText="Fecha de Grado" />
           </Columns>
         </asp:GridView>
+        <asp:Label ID="lblnoexperiencia" Visible="true" runat="server" CssClass="anuncio">No es encontraron experiencias</asp:Label>
       </section>
     </fieldset>
     <fieldset>
       <legend>Cursos a Dictar</legend>
-      <section class="curso">
+      <section class="curso data">
         <asp:GridView ID="gvcurso" runat="server" CssClass="table">
           <Columns>
             <asp:BoundField DataField="titulo" HeaderText="Titulo" />
@@ -87,11 +92,12 @@
             <asp:BoundField DataField="fGrado" HeaderText="Fecha de Grado" />
           </Columns>
         </asp:GridView>
+        <asp:Label ID="lblnocursos" Visible="true" runat="server" CssClass="anuncio">No es encontraron cursos</asp:Label>
       </section>
     </fieldset>
     <fieldset>
       <legend>Discapacidad</legend>
-      <section class="discapacidad">
+      <section class="discapacidad data">
         <asp:GridView ID="gvdiscapacidad" runat="server" CssClass="table">
           <Columns>
             <asp:BoundField DataField="titulo" HeaderText="Titulo" />
@@ -99,6 +105,7 @@
             <asp:BoundField DataField="fGrado" HeaderText="Fecha de Grado" />
           </Columns>
         </asp:GridView>
+        <asp:Label ID="lblnodiscapacidad" Visible="true" runat="server" CssClass="anuncio">No es encontraron discapacidades</asp:Label>
       </section>
     </fieldset>
   </form>

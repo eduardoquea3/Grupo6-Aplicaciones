@@ -24,6 +24,7 @@
         <asp:FileUpload ID="fucerti" runat="server" CssClass="hidden"/>
       </div>
       <asp:Button ID="btnagregar" runat="server" Text="Agregar Experiencia" CssClass="btn"/>
+      <asp:Button ID="btncancelar" runat="server" Text="Cancelar" CssClass="btn"/>
     </form>
 </body>
 </html>

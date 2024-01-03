@@ -10,7 +10,10 @@
       <asp:TextBox ID="txtdiscapacidad" runat="server" ReadOnly="true"></asp:TextBox>
       <label>Descripcion de la discapacidad</label>
       <asp:TextBox ID="txtdescDiscapacidad" runat="server" TextMode="MultiLine" ReadOnly="true"></asp:TextBox>
-      <asp:Button ID="btneliminar" runat="server" Text="Eliminar" CssClass="btn"/>
+      <div>
+        <asp:Button ID="btneliminar" runat="server" Text="Eliminar" CssClass="btn"/>
+        <asp:Button ID="btncancelar" runat="server" Text="Cancelar" CssClass="btn"/>
+      </div>
     </form>
   </section>
 </asp:Content>

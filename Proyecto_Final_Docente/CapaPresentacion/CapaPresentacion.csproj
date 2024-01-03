@@ -78,6 +78,7 @@
     <Content Include="css\experiencia.css" />
     <Content Include="css\layout.css" />
     <Content Include="css\login.css" />
+    <Content Include="css\newpass.css" />
     <Content Include="css\password.css" />
     <Content Include="css\perfil.css" />
     <Content Include="imagenes\colegio.png" />
@@ -94,6 +95,7 @@
     <Content Include="Pages\Experiencia\Agregar.aspx" />
     <Content Include="Pages\Experiencia\Eliminar.aspx" />
     <Content Include="Pages\Inicio.aspx" />
+    <Content Include="Pages\NewPass.aspx" />
     <Content Include="Pages\Perfil.aspx" />
     <Content Include="Pages\Academico.aspx" />
     <Content Include="Pages\Experiencia.aspx" />
@@ -166,6 +168,13 @@
     </Compile>
     <Compile Include="Pages\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewPass.aspx.cs">
+      <DependentUpon>NewPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NewPass.aspx.designer.cs">
+      <DependentUpon>NewPass.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>

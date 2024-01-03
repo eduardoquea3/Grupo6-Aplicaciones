@@ -28,31 +28,27 @@ body {
   background: var(--fondo);
 }
 
-form {
+form{
   background: var(--quinto);
   height: 500px;
-  width: 800px;
+  width: 600px;
   border-radius: 10px;
   display: grid;
-  grid-template-columns: repeat(4,25%);
-  grid-template-rows: repeat(7,1fr);
-  padding: 1% 5%;
-  gap: 10px;
-  &.eliminar{
-    grid-template-rows: repeat(6,1fr);
-  }
+  grid-template-columns: repeat(4,1fr);
+  padding: 5% 5%;
+  gap: 15px;
 }
-
-h2 {
-  text-align: center;
-  color: var(--segundo);
-  font-size: 50px;
+h2{
+  font-size: 2.5rem;
   grid-column: span 4;
 }
-
-input[type="text"]{
+label{
+  font-size: 1.3rem;
+  grid-column: span 4;
+}
+.input {
+  grid-column: span 4;
   height: 44px;
-  width: 80%;
   border-radius: 8px;
   border-width: 0 0 1px 0;
   border-style: solid;
@@ -64,7 +60,6 @@ input[type="text"]{
   font-weight: 500;
   color: var(--primero);
   transition: all 0.2s;
-  grid-column: span 2;
 
   &:focus,
   &:hover {
@@ -79,20 +74,10 @@ input[type="text"]{
   }
 }
 
-label {
-  font-weight: 500;
-  font-size: 20px;
-  color: var(--segundo);
-  grid-column: span 2;
-  display: grid;
-  place-content: end start;
-}
-
 .btn {
-  height: 80%;
   grid-column: span 2;
-  width: 200px;
-  margin-left: calc(50% - 100px);
+  height: 44px;
+  width: 150px;
   border-radius: 15px;
   border: 0;
   color: var(--segundo);
@@ -107,36 +92,6 @@ label {
   }
 }
 
-.hidden {
-  display: none;
-}
-
-div.aspNetHidden{
-  display: none;
-}
-
 div{
-  grid-column: span 4;
-  display: flex;
-  justify-content: center;
-  & label,p{
-    width: 150px;
-    height: 44px;
-    display: grid;
-    place-content: center;
-  }
-  & label{
-    background: var(--cuarto);
-    border-radius: 10px 0 0 10px;
-    &:hover{
-      background: rgb(161 202 235);
-    }
-    &:hover + p{
-      background: rgb(198 218 235);
-    }
-  }
-  & p{
-    background: var(--tercero);
-    border-radius: 0 10px 10px 0;
-  }
+  display: none;
 }

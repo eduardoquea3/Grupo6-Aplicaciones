@@ -8,12 +8,12 @@ create proc sp_AgregarUsuario
 	@apeP varchar(50),
 	@apeM varchar(50),
 	@username varchar(50),
-	@tipo varchar(50),
-	@doc int,
+	@tipo int,
+	@doc bigint,
 	@correo varchar(50),
 	@contra varchar(50)
 as
-  insert Usuario_Docente
+  insert UsuarioDocente
   (nombre,apeP,apeM,username,tipo,doc,correo,contra)
 	values
 	(@nombre,@apeP,@apeM,@username,@tipo,@doc,@correo,ENCRYPTBYPASSPHRASE('password',@contra))
@@ -25,7 +25,7 @@ create proc sp_ValidarUsuario
 	@correo varchar(50)
 as
   select nombre
-  from Usuario_Docente
+  from UsuarioDocente
   where doc=@doc or correo=@correo;
 go
 
@@ -35,18 +35,18 @@ create proc sp_Login
 	@contra varchar(50)
 as
   select id
-  from Usuario_Docente
+  from UsuarioDocente
   where correo=@correo and DECRYPTBYPASSPHRASE('password',contra)=@contra;
 go
 
 create proc sp_L_password
 	@correo varchar(50)
 as
-	if exists(select 1 from Usuario_Docente where correo=@correo)
+	if exists(select 1 from UsuarioDocente where correo=@correo)
 	begin
 		select
 			CONVERT(varchar(50), DECRYPTBYPASSPHRASE('password', contra)) AS DatosDesencriptados
-		FROM Usuario_Docente
+		FROM UsuarioDocente
 		where correo=@correo;
 	end
 -------------------------------------------------------------------------
@@ -57,7 +57,7 @@ as
 create proc sp_I_listarUsuario
   @id int
 as
-  select username,nombre,apeP,apeM,tipo,doc,correo from Usuario_Docente
+  select username,nombre,apeP,apeM,tipo,doc,correo from UsuarioDocente
   where id=@id
 go
 
@@ -100,7 +100,7 @@ as
   select curso
   from Cursos c
   inner join CursoDictado cd on c.idCurso=cd.idCurso
-  inner join Usuario_Docente ud on cd.id=ud.id
+  inner join UsuarioDocente ud on cd.id=ud.id
   where ud.id=@id
 go
 
@@ -131,7 +131,7 @@ select * from RegistroDocente
     sexo = @sex,
     estadoCivil = @civil,
     direccion = @direc,
-	ubigeo = @ubigeo,
+	  ubigeo = @ubigeo,
     telefono = @telefono,
     celular = @celular,
     foto = @foto,
@@ -157,7 +157,7 @@ as
 create proc sp_R_actualizarDatosUsuario
   @id int,@username nvarchar(50),@correo nvarchar(50)
 as
-  update Usuario_Docente
+  update UsuarioDocente
   set username=@username,
   correo=@correo
   where id=@id
@@ -166,7 +166,7 @@ go
 create proc sp_R_newPassword
   @id int,@contra varchar(10),@new varchar(10)
 as
-  update Usuario_Docente
+  update UsuarioDocente
   set contra=ENCRYPTBYPASSPHRASE('password',@new)
   where DECRYPTBYPASSPHRASE('password',contra)=@contra and id=@id
 

@@ -87,6 +87,15 @@ namespace CapaPresentacion.Pages
     protected global::System.Web.UI.WebControls.Button btncambiar;
 
     /// <summary>
+    /// pnvista control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel pnvista;
+
+    /// <summary>
     /// lblsexo control.
     /// </summary>
     /// <remarks>
@@ -177,6 +186,15 @@ namespace CapaPresentacion.Pages
     protected global::System.Web.UI.WebControls.Label lblprecio;
 
     /// <summary>
+    /// lblnopersonales control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lblnopersonales;
+
+    /// <summary>
     /// gvacademicos control.
     /// </summary>
     /// <remarks>
@@ -184,6 +202,15 @@ namespace CapaPresentacion.Pages
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.GridView gvacademicos;
+
+    /// <summary>
+    /// lblnoacademico control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lblnoacademico;
 
     /// <summary>
     /// gvexpe control.
@@ -195,6 +222,15 @@ namespace CapaPresentacion.Pages
     protected global::System.Web.UI.WebControls.GridView gvexpe;
 
     /// <summary>
+    /// lblnoexperiencia control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lblnoexperiencia;
+
+    /// <summary>
     /// gvcurso control.
     /// </summary>
     /// <remarks>
@@ -204,6 +240,15 @@ namespace CapaPresentacion.Pages
     protected global::System.Web.UI.WebControls.GridView gvcurso;
 
     /// <summary>
+    /// lblnocursos control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lblnocursos;
+
+    /// <summary>
     /// gvdiscapacidad control.
     /// </summary>
     /// <remarks>
@@ -211,5 +256,14 @@ namespace CapaPresentacion.Pages
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.GridView gvdiscapacidad;
+
+    /// <summary>
+    /// lblnodiscapacidad control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lblnodiscapacidad;
   }
 }
