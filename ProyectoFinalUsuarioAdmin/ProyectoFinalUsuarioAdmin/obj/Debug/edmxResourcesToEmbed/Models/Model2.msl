@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProyectoFinalModel1StoreContainer" CdmEntityContainer="ProyectoFinalEntities1">
+    <EntitySetMapping Name="Carrera">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.Carrera">
+        <MappingFragment StoreEntitySet="Carrera">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cursos">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.Cursos">
+        <MappingFragment StoreEntitySet="Cursos">
+          <ScalarProperty Name="idCurso" ColumnName="idCurso" />
+          <ScalarProperty Name="curso" ColumnName="curso" />
+          <ScalarProperty Name="idC" ColumnName="idC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatosAcademicos">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.DatosAcademicos">
+        <MappingFragment StoreEntitySet="DatosAcademicos">
+          <ScalarProperty Name="idDatos" ColumnName="idDatos" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="centroEstudios" ColumnName="centroEstudios" />
+          <ScalarProperty Name="fechaGrado" ColumnName="fechaGrado" />
+          <ScalarProperty Name="subirTitulo" ColumnName="subirTitulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Discapacidad">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.Discapacidad">
+        <MappingFragment StoreEntitySet="Discapacidad">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idDiscapacidad" ColumnName="idDiscapacidad" />
+          <ScalarProperty Name="discapacidad1" ColumnName="discapacidad" />
+          <ScalarProperty Name="descDiscapacidad" ColumnName="descDiscapacidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoCivil">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.EstadoCivil">
+        <MappingFragment StoreEntitySet="EstadoCivil">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Experencias">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.Experencias">
+        <MappingFragment StoreEntitySet="Experencias">
+          <ScalarProperty Name="idExpe" ColumnName="idExpe" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="f_Inicio" ColumnName="f_Inicio" />
+          <ScalarProperty Name="f_Fin" ColumnName="f_Fin" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="certificado" ColumnName="certificado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sexo">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.Sexo">
+        <MappingFragment StoreEntitySet="Sexo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoDocumento">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.TipoDocumento">
+        <MappingFragment StoreEntitySet="TipoDocumento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ubigeo">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.Ubigeo">
+        <MappingFragment StoreEntitySet="Ubigeo">
+          <ScalarProperty Name="ubigeo1" ColumnName="ubigeo" />
+          <ScalarProperty Name="dpto" ColumnName="dpto" />
+          <ScalarProperty Name="prov" ColumnName="prov" />
+          <ScalarProperty Name="distrito" ColumnName="distrito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="contra" ColumnName="contra" />
+          <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+          <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="PerfilUsuario" ColumnName="PerfilUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioAdmin">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.UsuarioAdmin">
+        <MappingFragment StoreEntitySet="UsuarioAdmin">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="contra" ColumnName="contra" />
+          <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+          <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="PerfilUsuario" ColumnName="PerfilUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioDocente">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.UsuarioDocente">
+        <MappingFragment StoreEntitySet="UsuarioDocente">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apeP" ColumnName="apeP" />
+          <ScalarProperty Name="apeM" ColumnName="apeM" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="doc" ColumnName="doc" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="contra" ColumnName="contra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistroDocente">
+      <EntityTypeMapping TypeName="ProyectoFinalModel1.RegistroDocente">
+        <MappingFragment StoreEntitySet="RegistroDocente">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="ubigeo" ColumnName="ubigeo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="fNacimiento" ColumnName="fNacimiento" />
+          <ScalarProperty Name="fRegistro" ColumnName="fRegistro" />
+          <ScalarProperty Name="fModficacion" ColumnName="fModficacion" />
+          <ScalarProperty Name="precio_Hora" ColumnName="precio_Hora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CursoDictado" TypeName="ProyectoFinalModel1.CursoDictado" StoreEntitySet="CursoDictado">
+      <EndProperty Name="Cursos">
+        <ScalarProperty Name="idCurso" ColumnName="idCurso" />
+      </EndProperty>
+      <EndProperty Name="UsuarioDocente">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

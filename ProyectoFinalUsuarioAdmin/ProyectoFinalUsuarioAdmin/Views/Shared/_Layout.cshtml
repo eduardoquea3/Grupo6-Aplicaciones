@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/menu.css">
+</head>
+<body class="inicio">
+    <img src="~/Imagnes/joseArango.jpg" alt="" class="full-screen-image">
+
+    <div class="sidebar">
+        <button class="toggle-btn" onclick="toggleMenu()">☰</button>
+        <ul class="menu">
+            <li class="nav-item">
+                @Html.ActionLink("Login", "Index", "Login", new { area = "" }, new { @class = "nav-link" })
+            </li>
+            <li class="nav-item">
+                @Html.ActionLink("Usuario Administrativo", "Index", "UsuarioAdmin", new { area = "" }, new { @class = "nav-link" })
+            </li>
+            <li class="nav-item">
+                @Html.ActionLink("Carrera", "Index", "Carreras", new { area = "" }, new { @class = "nav-link" })
+            </li>
+            <li class="nav-item">
+                @Html.ActionLink("Consulta de Docente", "Index", "Consultar", new { area = "" }, new { @class = "nav-link" })
+            </li>
+            <li class="nav-item">
+                @Html.ActionLink("Consulta Profesor", "Index", "Docente", new { area = "" }, new { @class = "nav-link" })
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Usuario Administrativo</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/menu.js"></script>
+</body>
+
+</html>
+

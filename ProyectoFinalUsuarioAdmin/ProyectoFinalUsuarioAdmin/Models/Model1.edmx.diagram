@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="12e1af52c50a455881d250098603a41b" Name="Diagram1">
+        <EntityTypeShape EntityType="ProyectoFinalModel.Carrera" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Cursos" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.DatosAcademicos" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Discapacidad" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.EstadoCivil" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Experencias" Width="1.5" PointX="7.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Sexo" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.TipoDocumento" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Ubigeo" Width="1.5" PointX="8.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Usuario" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.UsuarioAdmin" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.UsuarioDocente" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.RegistroDocente" Width="1.5" PointX="10.5" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="ProyectoFinalModel.FK_idC" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__DatosAcademi__id__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__Discapacidad__id__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__RegistroD__estad__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__Experencias__id__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__RegistroDo__sexo__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__UsuarioDoc__tipo__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__RegistroD__ubige__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__RegistroDoce__id__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.CursoDictado" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

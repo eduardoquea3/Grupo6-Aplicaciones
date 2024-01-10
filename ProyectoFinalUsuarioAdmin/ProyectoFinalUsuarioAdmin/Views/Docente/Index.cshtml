@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.ActionLink("Consultar", "Consultar", "Docente", null, new { @class = "btn btn-success" })
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Tipo de Documento</th>
+                <th>Número de Documento</th>
+                <th>Nombre Completo</th>
+                <th>Sexo</th>
+                <th>Estado Civil</th>
+                <th>Precio Hora</th>
+            
+                <!-- Agrega más encabezados según tus propiedades -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TipoDocumento</td>
+                    <td>@item.NumeroDocumento</td>
+                    <td>
+                        <a href="@Url.Action("Index", "DetalleDocente", new { nombreCompleto = item.NombreCompleto })">
+                            @item.NombreCompleto
+                        </a>
+                    </td>
+                    <td>@item.sexo</td>
+                    <td>@item.EstadoCivil</td>
+                    <td>@item.PrecioXHora</td>
+                    <td>@item.Telefono</td>
+                    <td>@item.CorreoElectronico</td>
+                    <!-- Agrega más celdas según tus propiedades -->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay datos disponibles.</p>
+}

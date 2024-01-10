@@ -1,0 +1,47 @@
+﻿@model List<ProyectoFinalUsuarioAdmin.Models.UsuarioAdmin>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>USUARIO ADMINISTRATIVO</h2>
+@Html.ActionLink("Agregar", "Agregar", "UsuarioAdmin", null, new { @class = "btn btn-success" })
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE USUARIO</th>
+                <th>CONTRASEÑA</th>
+                <th>APELLIDO PATERNO</th>
+                <th>APELLIDO MATERNO</th>
+                <th>NOMBRES</th>
+                <th>PERFIL USUARIO</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fila in Model)
+            {
+                <tr>
+                    <td>@fila.idUsuario</td>
+                    <td>@fila.nombreUsuario</td>
+                    <td>@fila.contra</td>
+                    <td>@fila.apellidoPaterno</td>
+                    <td>@fila.apellidoMaterno</td>
+                    <td>@fila.nombres</td>
+                    <td>@fila.PerfilUsuario</td>
+                    <td>
+                        @Html.ActionLink("Editar", "Editar", "UsuarioAdmin", new { id = fila.idUsuario }, new { @class = "btn btn-primary", style = "margin-right: 5px;" })
+                        @Html.ActionLink("Eliminar", "Eliminar", "UsuarioAdmin", new { id = fila.idUsuario }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay Usuarios Administrativos para mostrar.</p>
+}
+

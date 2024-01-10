@@ -1,0 +1,46 @@
+﻿@model ProyectoFinalUsuarioAdmin.Models.UsuarioAdmin
+@{
+    ViewBag.Title = "Agregar Usuario-Administrativo";
+
+}
+
+<h2>Agregar Usuario Administrativo</h2>
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Agregar", "UsuarioAdmin", FormMethod.Post))
+        {
+            <div>
+                @Html.LabelFor(model => model.nombreUsuario, "nombre Usuario")
+                @Html.TextBoxFor(model => model.nombreUsuario, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.contra, "Contarseña")
+                @Html.TextBoxFor(model => model.contra, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.apellidoPaterno, "Apellido Paterno")
+                @Html.TextBoxFor(model => model.apellidoPaterno, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.apellidoMaterno, "Apellido Materno")
+                @Html.TextBoxFor(model => model.apellidoMaterno, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.nombres, "Nombres")
+                @Html.TextBoxFor(model => model.nombres, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.PerfilUsuario, "Selecciona un área")
+                @Html.DropDownListFor(model => model.PerfilUsuario, new SelectList(ViewBag.PerfilUsuario, "Value", "Text"), "Selecciona un área", new { @class = "form-control" })
+            </div>
+
+
+            <br />
+            <div>
+                <input id="submit1" type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+</div>
+
+

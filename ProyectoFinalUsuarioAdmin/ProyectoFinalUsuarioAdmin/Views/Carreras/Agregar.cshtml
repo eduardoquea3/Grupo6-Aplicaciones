@@ -1,0 +1,27 @@
+﻿@model ProyectoFinalUsuarioAdmin.Models.Cursos
+@{
+    ViewBag.Title = "Agregar Curso_Carrera A Docente";
+}
+
+<h2>Agregar Curso_Carrera</h2>
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Agregar", "Carreras", FormMethod.Post))
+        {
+            <div>
+                @Html.LabelFor(model => model.curso, "Selecciona un curso")
+                @Html.DropDownListFor(model => model.curso, (SelectList)ViewBag.Cursos, "Selecciona un curso", new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.idC, "Selecciona una carrera")
+                @Html.DropDownListFor(model => model.idC, (SelectList)ViewBag.Carreras, "Selecciona una carrera", new { @class = "form-control" })
+            </div>
+
+            <br />
+            <div>
+                <input id="submit1" type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+</div>
+

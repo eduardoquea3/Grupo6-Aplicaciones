@@ -1,0 +1,48 @@
+﻿@model  ProyectoFinalUsuarioAdmin.Models.UsuarioAdmin
+@{
+    ViewBag.Title = "Editar Usuario_Administrativo";
+}
+
+<h2>Editar UsuarioAdministrativo</h2>
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Editar", "UsuarioAdmin", FormMethod.Post))
+        {
+            <div>
+                @Html.Label("IDUsuario")
+                @Html.TextBoxFor(model => model.idUsuario, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.Label("Nombre Usuario")
+                @Html.TextBoxFor(model => model.nombreUsuario, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.Label("Contraseña")
+                @Html.TextBoxFor(model => model.contra, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.Label("Apellido Paterno")
+                @Html.TextBoxFor(model => model.apellidoPaterno, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.Label("Apellido Materno")
+                @Html.TextBoxFor(model => model.apellidoMaterno, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.Label("Nombres")
+                @Html.TextBoxFor(model => model.nombres, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.Label("PerfilUsuario")
+                @Html.TextBoxFor(model => model.PerfilUsuario, new { @class = "form-control" })
+            </div>
+
+
+            <br />
+            <div>
+                <input id="submit1" type="submit" value="Editar" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+</div>
+

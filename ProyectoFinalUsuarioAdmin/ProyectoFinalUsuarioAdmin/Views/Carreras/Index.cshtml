@@ -1,0 +1,40 @@
+﻿@model List<ProyectoFinalUsuarioAdmin.Models.Cursos>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>CURSOS CARRERA</h2>
+@Html.ActionLink("Agregar", "Agregar", "Carreras", null, new { @class = "btn btn-success" })
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE CURSO</th>
+                <th>NOMBRE CARRERA</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fila in Model)
+            {
+                <tr>
+                    <td>@(fila.idCurso )</td>
+                    <td>@(fila.curso )</td>
+                    <td>@(fila.Carrera != null ? fila.Carrera.nombre : "Carrera no asignada")</td>
+
+
+                    <td>
+                        @Html.ActionLink("Editar", "Editar", "Carreras", new { id = fila.idCurso }, new { @class = "btn btn-primary", style = "margin-right: 5px;" })
+                        @Html.ActionLink("Eliminar", "Eliminar", "Carreras", new { id = fila.idCurso }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay Carreras para mostrar.</p>
+}

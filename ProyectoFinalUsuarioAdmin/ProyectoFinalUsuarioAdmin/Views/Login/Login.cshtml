@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+@if (ViewData.ModelState.Count > 0)
+{
+    <div class="alert alert-danger">
+        <strong>Error:</strong> @Html.ValidationSummary(false)
+    </div>
+}
+
+<p>Has iniciado sesión correctamente. Redirigiendo...</p>
+
+<script>
+    setTimeout(function () {
+        window.location.href = '@Url.Action("UsuarioAdmin", "UsuarioAdmin")'; // Redirige a la página principal (Home)
+    }, 3000); // Redirige después de 3 segundos (puedes ajustar el tiempo según sea necesario)
+</script>
+

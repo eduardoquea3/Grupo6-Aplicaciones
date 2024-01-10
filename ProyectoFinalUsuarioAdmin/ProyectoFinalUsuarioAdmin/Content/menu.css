@@ -1,0 +1,123 @@
+﻿body {
+   
+
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: rgb(24, 106, 161);
+    transition: all 0.3s ease;
+}
+
+    .sidebar.active {
+        left: 0;
+    }
+
+.toggle-btn {
+    position: absolute;
+    left: 250px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: greenyellow;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+    .menu li {
+        padding: 15px;
+    }
+
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+            .menu li a:hover {
+                color: #f00;
+            }
+/* Establecer el tamaño y posición de la imagen */
+.full-screen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Para enviar la imagen detrás del contenido si se agrega más contenido */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(14, 173, 201);
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.search-form {
+    display: flex;
+}
+
+    .search-form input[type="text"] {
+        padding: 8px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        width: 250px;
+    }
+
+    .search-form button {
+        padding: 8px 15px;
+        background-color: #f00;
+        color: #fff;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+    }
+
+        .search-form button:hover {
+            background-color: #d00;
+        }
+
+body.inicio {
+    background-image: url('ruta-de-tu-imagen/arango.jpg');
+    background-size: cover;
+    /* Otros estilos que desees aplicar para el fondo */
+}
+  
+
+

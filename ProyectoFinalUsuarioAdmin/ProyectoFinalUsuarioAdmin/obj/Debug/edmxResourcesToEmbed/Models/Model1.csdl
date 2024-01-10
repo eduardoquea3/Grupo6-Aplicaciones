@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProyectoFinalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Carrera">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cursos" Relationship="Self.FK_idC" FromRole="Carrera" ToRole="Cursos" />
+  </EntityType>
+  <EntityType Name="Cursos">
+    <Key>
+      <PropertyRef Name="idCurso" />
+    </Key>
+    <Property Name="idCurso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="curso" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="idC" Type="Int32" />
+    <NavigationProperty Name="Carrera" Relationship="Self.FK_idC" FromRole="Cursos" ToRole="Carrera" />
+    <NavigationProperty Name="UsuarioDocente" Relationship="Self.CursoDictado" FromRole="Cursos" ToRole="UsuarioDocente" />
+  </EntityType>
+  <EntityType Name="DatosAcademicos">
+    <Key>
+      <PropertyRef Name="idDatos" />
+    </Key>
+    <Property Name="idDatos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="centroEstudios" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaGrado" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="subirTitulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="UsuarioDocente" Relationship="Self.FK__DatosAcademi__id__5BE2A6F2" FromRole="DatosAcademicos" ToRole="UsuarioDocente" />
+  </EntityType>
+  <EntityType Name="Discapacidad">
+    <Key>
+      <PropertyRef Name="idDiscapacidad" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="idDiscapacidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="discapacidad1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descDiscapacidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="UsuarioDocente" Relationship="Self.FK__Discapacidad__id__59063A47" FromRole="Discapacidad" ToRole="UsuarioDocente" />
+  </EntityType>
+  <EntityType Name="EstadoCivil">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RegistroDocente" Relationship="Self.FK__RegistroD__estad__76969D2E" FromRole="EstadoCivil" ToRole="RegistroDocente" />
+  </EntityType>
+  <EntityType Name="Experencias">
+    <Key>
+      <PropertyRef Name="idExpe" />
+    </Key>
+    <Property Name="idExpe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="f_Inicio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="f_Fin" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="cargo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="empresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="certificado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="UsuarioDocente" Relationship="Self.FK__Experencias__id__5EBF139D" FromRole="Experencias" ToRole="UsuarioDocente" />
+  </EntityType>
+  <EntityType Name="Sexo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tipo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RegistroDocente" Relationship="Self.FK__RegistroDo__sexo__778AC167" FromRole="Sexo" ToRole="RegistroDocente" />
+  </EntityType>
+  <EntityType Name="TipoDocumento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UsuarioDocente" Relationship="Self.FK__UsuarioDoc__tipo__4F7CD00D" FromRole="TipoDocumento" ToRole="UsuarioDocente" />
+  </EntityType>
+  <EntityType Name="Ubigeo">
+    <Key>
+      <PropertyRef Name="ubigeo1" />
+    </Key>
+    <Property Name="ubigeo1" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dpto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="prov" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="distrito" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RegistroDocente" Relationship="Self.FK__RegistroD__ubige__75A278F5" FromRole="Ubigeo" ToRole="RegistroDocente" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contra" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PerfilUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UsuarioAdmin">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contra" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PerfilUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UsuarioDocente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apeP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apeM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo" Type="Int32" Nullable="false" />
+    <Property Name="doc" Type="Int64" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contra" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="registrado" Type="Int32" />
+    <NavigationProperty Name="DatosAcademicos" Relationship="Self.FK__DatosAcademi__id__5BE2A6F2" FromRole="UsuarioDocente" ToRole="DatosAcademicos" />
+    <NavigationProperty Name="Discapacidad" Relationship="Self.FK__Discapacidad__id__59063A47" FromRole="UsuarioDocente" ToRole="Discapacidad" />
+    <NavigationProperty Name="Experencias" Relationship="Self.FK__Experencias__id__5EBF139D" FromRole="UsuarioDocente" ToRole="Experencias" />
+    <NavigationProperty Name="TipoDocumento" Relationship="Self.FK__UsuarioDoc__tipo__4F7CD00D" FromRole="UsuarioDocente" ToRole="TipoDocumento" />
+    <NavigationProperty Name="RegistroDocente" Relationship="Self.FK__RegistroDoce__id__74AE54BC" FromRole="UsuarioDocente" ToRole="RegistroDocente" />
+    <NavigationProperty Name="Cursos" Relationship="Self.CursoDictado" FromRole="UsuarioDocente" ToRole="Cursos" />
+  </EntityType>
+  <EntityType Name="RegistroDocente">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="sexo" />
+      <PropertyRef Name="estadoCivil" />
+      <PropertyRef Name="direccion" />
+      <PropertyRef Name="ubigeo" />
+      <PropertyRef Name="telefono" />
+      <PropertyRef Name="celular" />
+      <PropertyRef Name="foto" />
+      <PropertyRef Name="fNacimiento" />
+      <PropertyRef Name="fRegistro" />
+      <PropertyRef Name="fModficacion" />
+      <PropertyRef Name="precio_Hora" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="sexo" Type="Int32" Nullable="false" />
+    <Property Name="estadoCivil" Type="Int32" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ubigeo" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="foto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fRegistro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fModficacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="precio_Hora" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="EstadoCivil1" Relationship="Self.FK__RegistroD__estad__76969D2E" FromRole="RegistroDocente" ToRole="EstadoCivil" />
+    <NavigationProperty Name="Sexo1" Relationship="Self.FK__RegistroDo__sexo__778AC167" FromRole="RegistroDocente" ToRole="Sexo" />
+    <NavigationProperty Name="Ubigeo1" Relationship="Self.FK__RegistroD__ubige__75A278F5" FromRole="RegistroDocente" ToRole="Ubigeo" />
+    <NavigationProperty Name="UsuarioDocente" Relationship="Self.FK__RegistroDoce__id__74AE54BC" FromRole="RegistroDocente" ToRole="UsuarioDocente" />
+  </EntityType>
+  <Association Name="FK_idC">
+    <End Role="Carrera" Type="Self.Carrera" Multiplicity="0..1" />
+    <End Role="Cursos" Type="Self.Cursos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carrera">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cursos">
+        <PropertyRef Name="idC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DatosAcademi__id__5BE2A6F2">
+    <End Role="UsuarioDocente" Type="Self.UsuarioDocente" Multiplicity="1" />
+    <End Role="DatosAcademicos" Type="Self.DatosAcademicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioDocente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DatosAcademicos">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Discapacidad__id__59063A47">
+    <End Role="UsuarioDocente" Type="Self.UsuarioDocente" Multiplicity="1" />
+    <End Role="Discapacidad" Type="Self.Discapacidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioDocente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Discapacidad">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RegistroD__estad__76969D2E">
+    <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1" />
+    <End Role="RegistroDocente" Type="Self.RegistroDocente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoCivil">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RegistroDocente">
+        <PropertyRef Name="estadoCivil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Experencias__id__5EBF139D">
+    <End Role="UsuarioDocente" Type="Self.UsuarioDocente" Multiplicity="1" />
+    <End Role="Experencias" Type="Self.Experencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioDocente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Experencias">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RegistroDo__sexo__778AC167">
+    <End Role="Sexo" Type="Self.Sexo" Multiplicity="1" />
+    <End Role="RegistroDocente" Type="Self.RegistroDocente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sexo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RegistroDocente">
+        <PropertyRef Name="sexo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioDoc__tipo__4F7CD00D">
+    <End Role="TipoDocumento" Type="Self.TipoDocumento" Multiplicity="1" />
+    <End Role="UsuarioDocente" Type="Self.UsuarioDocente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDocumento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UsuarioDocente">
+        <PropertyRef Name="tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RegistroD__ubige__75A278F5">
+    <End Role="Ubigeo" Type="Self.Ubigeo" Multiplicity="1" />
+    <End Role="RegistroDocente" Type="Self.RegistroDocente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ubigeo">
+        <PropertyRef Name="ubigeo1" />
+      </Principal>
+      <Dependent Role="RegistroDocente">
+        <PropertyRef Name="ubigeo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RegistroDoce__id__74AE54BC">
+    <End Role="UsuarioDocente" Type="Self.UsuarioDocente" Multiplicity="1" />
+    <End Role="RegistroDocente" Type="Self.RegistroDocente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioDocente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RegistroDocente">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CursoDictado">
+    <End Role="Cursos" Type="Self.Cursos" Multiplicity="*" />
+    <End Role="UsuarioDocente" Type="Self.UsuarioDocente" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ProyectoFinalEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Carrera" EntityType="Self.Carrera" />
+    <EntitySet Name="Cursos" EntityType="Self.Cursos" />
+    <EntitySet Name="DatosAcademicos" EntityType="Self.DatosAcademicos" />
+    <EntitySet Name="Discapacidad" EntityType="Self.Discapacidad" />
+    <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" />
+    <EntitySet Name="Experencias" EntityType="Self.Experencias" />
+    <EntitySet Name="Sexo" EntityType="Self.Sexo" />
+    <EntitySet Name="TipoDocumento" EntityType="Self.TipoDocumento" />
+    <EntitySet Name="Ubigeo" EntityType="Self.Ubigeo" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <EntitySet Name="UsuarioAdmin" EntityType="Self.UsuarioAdmin" />
+    <EntitySet Name="UsuarioDocente" EntityType="Self.UsuarioDocente" />
+    <EntitySet Name="RegistroDocente" EntityType="Self.RegistroDocente" />
+    <AssociationSet Name="FK_idC" Association="Self.FK_idC">
+      <End Role="Carrera" EntitySet="Carrera" />
+      <End Role="Cursos" EntitySet="Cursos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DatosAcademi__id__5BE2A6F2" Association="Self.FK__DatosAcademi__id__5BE2A6F2">
+      <End Role="UsuarioDocente" EntitySet="UsuarioDocente" />
+      <End Role="DatosAcademicos" EntitySet="DatosAcademicos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Discapacidad__id__59063A47" Association="Self.FK__Discapacidad__id__59063A47">
+      <End Role="UsuarioDocente" EntitySet="UsuarioDocente" />
+      <End Role="Discapacidad" EntitySet="Discapacidad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RegistroD__estad__76969D2E" Association="Self.FK__RegistroD__estad__76969D2E">
+      <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+      <End Role="RegistroDocente" EntitySet="RegistroDocente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Experencias__id__5EBF139D" Association="Self.FK__Experencias__id__5EBF139D">
+      <End Role="UsuarioDocente" EntitySet="UsuarioDocente" />
+      <End Role="Experencias" EntitySet="Experencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RegistroDo__sexo__778AC167" Association="Self.FK__RegistroDo__sexo__778AC167">
+      <End Role="Sexo" EntitySet="Sexo" />
+      <End Role="RegistroDocente" EntitySet="RegistroDocente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioDoc__tipo__4F7CD00D" Association="Self.FK__UsuarioDoc__tipo__4F7CD00D">
+      <End Role="TipoDocumento" EntitySet="TipoDocumento" />
+      <End Role="UsuarioDocente" EntitySet="UsuarioDocente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RegistroD__ubige__75A278F5" Association="Self.FK__RegistroD__ubige__75A278F5">
+      <End Role="Ubigeo" EntitySet="Ubigeo" />
+      <End Role="RegistroDocente" EntitySet="RegistroDocente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RegistroDoce__id__74AE54BC" Association="Self.FK__RegistroDoce__id__74AE54BC">
+      <End Role="UsuarioDocente" EntitySet="UsuarioDocente" />
+      <End Role="RegistroDocente" EntitySet="RegistroDocente" />
+    </AssociationSet>
+    <AssociationSet Name="CursoDictado" Association="Self.CursoDictado">
+      <End Role="Cursos" EntitySet="Cursos" />
+      <End Role="UsuarioDocente" EntitySet="UsuarioDocente" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

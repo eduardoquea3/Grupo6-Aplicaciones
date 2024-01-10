@@ -1,0 +1,31 @@
+﻿@model  ProyectoFinalUsuarioAdmin.Models.Cursos
+@{
+    ViewBag.Title = "Editar Usuario_Administrativo";
+}
+
+<h2>Editar UsuarioAdministrativo</h2>
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Editar", "Carreras", FormMethod.Post))
+        {
+            <div>
+                @Html.Label("IDCurso")
+                @Html.TextBoxFor(model => model.idCurso, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.Label("Nombre Curso")
+                @Html.TextBoxFor(model => model.curso, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.Label("Codigo Carrera")
+                @Html.TextBoxFor(model => model.idC, new { @class = "form-control" })
+            </div>
+
+            <br />
+            <div>
+                <input id="submit1" type="submit" value="Editar" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+</div>
+
