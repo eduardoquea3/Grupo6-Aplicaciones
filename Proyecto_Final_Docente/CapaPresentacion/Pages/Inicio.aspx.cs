@@ -14,12 +14,15 @@ namespace CapaPresentacion.Pages
     {
       if (!IsPostBack)
       {
-        llenarLogin();
-        llenarExtras();
-        llenarAcademicos();
-        llenarExperiencias();
-        llenarCursos();
-        llenarDiscapacidad();
+        if (Request.QueryString["id"] != null)
+        {
+          llenarLogin();
+          llenarExtras();
+          llenarAcademicos();
+          llenarExperiencias();
+          llenarCursos();
+          llenarDiscapacidad();
+        }
       }
     }
     public void llenarLogin()
@@ -137,8 +140,20 @@ namespace CapaPresentacion.Pages
 
     protected void btncambiar_Click(object sender, EventArgs e)
     {
-      id = int.Parse(Request.QueryString["id"].ToString());
-      Response.Redirect($"./NewPass.aspx?id={id}");
+      if (Request.QueryString["id"] != null)
+      {
+        id = int.Parse(Request.QueryString["id"].ToString());
+        Response.Redirect($"./NewPass.aspx?id={id}");
+      }
+      else
+      {
+        Session["raiz"] = "inicio";
+        mesage("Resgistrese");
+      }
+    }
+    private void mesage(string data)
+    {
+      Response.Write($"<script>alert('{data}')</script>");
     }
   }
 }

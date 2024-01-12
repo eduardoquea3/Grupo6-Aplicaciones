@@ -11,8 +11,8 @@
       <label>Descripcion de la discapacidad</label>
       <asp:TextBox ID="txtdescDiscapacidad" runat="server" TextMode="MultiLine"></asp:TextBox>
       <div>
-        <asp:Button ID="btnagregar" runat="server" Text="Agregar" CssClass="btn"/>
-        <asp:Button ID="btncancelar" runat="server" Text="Cancelar" CssClass="btn"/>
+        <asp:Button ID="btnagregar" runat="server" Text="Agregar" CssClass="btn" OnClick="btnagregar_Click"/>
+        <asp:Button ID="btncancelar" runat="server" Text="Cancelar" CssClass="btn" OnClick="btncancelar_Click"/>
       </div>
     </form>
   </section>

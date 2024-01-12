@@ -15,13 +15,13 @@ namespace CapaPresentacion.Pages
     {
       id = int.Parse(Request.QueryString["id"].ToString());
       new NInicio().newpass(id, txtpass.Text, txtnewpass.Text);
-      Response.Redirect($"./Inicio.aspx?id={id}");
+      Response.Redirect($"./Perfil.aspx?id={id}");
     }
 
     protected void btncancelar_Click(object sender, EventArgs e)
     {
       id = int.Parse(Request.QueryString["id"].ToString());
-      Response.Redirect($"./Inicio.aspx?id={id}");
+      Response.Redirect($"./Perfil.aspx?id={id}");
     }
   }
 }

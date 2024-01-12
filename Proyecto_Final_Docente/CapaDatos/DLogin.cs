@@ -46,7 +46,7 @@ namespace CapaDatos
       return r;
     }
 
-    public bool validar(ULogin user)
+    public bool validar(string documento, string correo)
     {
       bool r = true;
       using (SqlConnection cn = new Conection().conectar())
@@ -57,8 +57,8 @@ namespace CapaDatos
           cmd.Connection = cn;
           cmd.CommandType = CommandType.StoredProcedure;
           cmd.CommandText = "sp_ValidarUsuario";
-          cmd.Parameters.AddWithValue("@doc", user.documento);
-          cmd.Parameters.AddWithValue("@correo", user.correo);
+          cmd.Parameters.AddWithValue("@doc", documento);
+          cmd.Parameters.AddWithValue("@correo", correo);
           cn.Open();
           using (SqlDataReader rd = cmd.ExecuteReader())
           {

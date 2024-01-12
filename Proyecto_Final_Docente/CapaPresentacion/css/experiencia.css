@@ -1,2 +1,35 @@
-﻿body {
+﻿input {
+  background: var(--tercero) !important;
+  border-radius: 10px !important;
+  padding: 10px 15px !important;
+  width: 250px;
+  &:hover {
+    background: var(--cuarto) !important;
+  }
+}
+
+h2{
+  font-size: 40px !important;
+}
+
+tbody{
+  & tr:has(th){
+    background: var(--segundo);
+  }
+  & td,th{
+    padding: 10px 20px;
+  }
+  & th{
+    color: white;
+  }
+  & tr:hover > td{
+    background: #f0f0f0;
+  }
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
 }

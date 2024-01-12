@@ -58,7 +58,7 @@ namespace CapaDatos
           {
             while (rd.Read())
             {
-              lista.Add(new CursoD(rd[0].ToString()));
+              lista.Add(new CursoD(rd.GetInt32(0), rd.GetInt32(1), rd[2].ToString()));
             }
           }
         }
@@ -73,5 +73,58 @@ namespace CapaDatos
       }
       return lista;
     }
+    public void agregarCurso(int id, int idC)
+    {
+      using (SqlConnection cn = new Conection().conectar())
+      {
+        SqlCommand cmd = new SqlCommand();
+        try
+        {
+          cmd.Connection = cn;
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.CommandText = "sp_C_addCursoD";
+          cmd.Parameters.AddWithValue("@id", id);
+          cmd.Parameters.AddWithValue("@idC", idC);
+          cn.Open();
+          cmd.ExecuteNonQuery();
+          cn.Close();
+        }
+        catch (Exception ex)
+        {
+          throw new Exception(ex.Message);
+        }
+        finally
+        {
+          cn.Dispose();
+        }
+      }
+    }
+    public void eliminarCurso(int id, int idC)
+    {
+      using (SqlConnection cn = new Conection().conectar())
+      {
+        SqlCommand cmd = new SqlCommand();
+        try
+        {
+          cmd.Connection = cn;
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.CommandText = "sp_C_eliminarCurso";
+          cmd.Parameters.AddWithValue("@id", id);
+          cmd.Parameters.AddWithValue("@idC", idC);
+          cn.Open();
+          cmd.ExecuteNonQuery();
+          cn.Close();
+        }
+        catch (Exception ex)
+        {
+          throw new Exception(ex.Message);
+        }
+        finally
+        {
+          cn.Dispose();
+        }
+      }
+    }
+
   }
 }

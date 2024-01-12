@@ -10,3 +10,9 @@ E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaE
 E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.dll
 E:\csharp\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.pdb
+H:\proyecto\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\bin\Debug\CapaEntidad.dll
+H:\proyecto\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\bin\Debug\CapaEntidad.pdb
+H:\proyecto\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+H:\proyecto\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+H:\proyecto\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.dll
+H:\proyecto\Grupo6-Aplicaciones\Proyecto_Final_Docente\CapaEntidad\obj\Debug\CapaEntidad.pdb

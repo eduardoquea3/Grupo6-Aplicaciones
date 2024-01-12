@@ -12,7 +12,7 @@
         <picture class="">
           <asp:Image ID="imgPerfil" runat="server" CssClass="" ImageUrl="~/imagenes/user.png" />
         </picture>
-        <main runat="server" class="w-full px-[10%] grid grid-cols-5 items-center justify-center text-center gap-y-[10px]">
+        <main class="w-full px-[10%] grid grid-cols-5 items-center justify-center text-center gap-y-[10px]">
           <asp:Label ID="lbluser" runat="server" CssClass="head">Eduardo Quea</asp:Label>
           <label class="">Nombres:</label>
           <asp:Label ID="lblnombre" runat="server" CssClass="datos">Eduardo Franco</asp:Label>
@@ -24,14 +24,14 @@
           <asp:Label ID="lbldocumento" runat="server" CssClass="datos">54986532</asp:Label>
           <label class="">Correo:</label>
           <asp:Label ID="lblcorreo" runat="server" CssClass="datos">ehancco@hotmail.com</asp:Label>
-          <asp:Button ID="btncambiar" runat="server" CssClass="btn" Text="Cambiar Contraseña" OnClick="btncambiar_Click"/>
+          <!--<asp:Button ID="btncambiar" runat="server" CssClass="btn" Text="Cambiar Contraseña" OnClick="btncambiar_Click"/>-->
         </main>
       </section>
     </fieldset>
     <fieldset>
       <legend>Datos Personales</legend>
       <section class="extras data">
-        <asp:Panel ID="pnvista" runat="server" Visible="true">
+        <asp:Panel ID="pnvista" runat="server" Visible="false">
           <label>Sexo:</label>
           <asp:Label ID="lblsexo" runat="server" CssClass="datos"></asp:Label>
           <label>Estado Civil:</label>
@@ -53,7 +53,7 @@
           <label>Precio por hora:</label>
           <asp:Label ID="lblprecio" runat="server" CssClass="datos"></asp:Label>
         </asp:Panel>
-        <asp:Label ID="lblnopersonales" Visible="false" runat="server" CssClass="anuncio">No se encontraron datos Personales</asp:Label>
+        <asp:Label ID="lblnopersonales" Visible="true" runat="server" CssClass="anuncio">No se encontraron datos Personales</asp:Label>
       </section>
     </fieldset>
     <fieldset>
@@ -86,7 +86,7 @@
     <fieldset>
       <legend>Cursos a Dictar</legend>
       <section class="curso data">
-        <asp:GridView ID="gvcurso" runat="server" CssClass="table" AutoGenerateColumns="false">
+        <asp:GridView ID="gvcurso" runat="server" CssClass="table curso" AutoGenerateColumns="false">
           <Columns>
             <asp:BoundField HeaderText="Cursos" DataField="nombre" />
           </Columns>

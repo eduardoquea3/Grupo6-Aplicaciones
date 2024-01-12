@@ -76,6 +76,7 @@
     <Content Include="css\Curso\Eliminar.css" />
     <Content Include="css\EditarDiscapacidad.css" />
     <Content Include="css\experiencia.css" />
+    <Content Include="css\inicio.css" />
     <Content Include="css\layout.css" />
     <Content Include="css\login.css" />
     <Content Include="css\newpass.css" />
@@ -247,7 +248,9 @@
       <Name>CapaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="imagenes\foto\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -10,9 +10,9 @@ namespace CapaNegocio
     {
       return cat.agregar(user);
     }
-    public bool validar(ULogin user)
+    public bool validar(string doc, string correo)
     {
-      return cat.validar(user);
+      return cat.validar(doc, correo);
     }
     public int login(ULogin user)
     {

@@ -31,7 +31,7 @@ namespace CapaDatos
                   dr["apeM"].ToString(),
                   dr["username"].ToString(),
                   dr["tipo"].ToString(),
-                  int.Parse(dr["doc"].ToString()),
+                  dr["doc"].ToString(),
                   dr["correo"].ToString()
               );
             }

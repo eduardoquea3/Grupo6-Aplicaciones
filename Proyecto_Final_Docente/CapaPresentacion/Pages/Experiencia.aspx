@@ -6,7 +6,7 @@
   <section>
     <form runat="server" class="experiencia">
       <h2>Experiencias</h2>
-      <asp:GridView ID="gvlista" runat="server" CssClass="table">
+      <asp:GridView ID="gvlista" runat="server" CssClass="table" AutoGenerateColumns="false">
         <Columns>
           <asp:BoundField  DataField="fInicio" HeaderText="Fecha de inicio"/>
           <asp:BoundField  DataField="fFin" HeaderText="Fecha de finalización"/>
@@ -15,7 +15,7 @@
           <asp:HyperLinkField DataNavigateUrlFields="id,idE" DataNavigateUrlFormatString="./Experiencia/Eliminar.aspx?id={0}&idE={1}" Text="Eliminar" />
         </Columns>
       </asp:GridView>
-      <asp:Button ID="btnagregar" runat="server" CssClass="btn" Text="Agregar Experiencia"/>
+      <asp:Button ID="btnagregar" runat="server" CssClass="btn" Text="Agregar Experiencia" OnClick="btnagregar_Click"/>
     </form>
   </section>
 </asp:Content>

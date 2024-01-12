@@ -17,7 +17,7 @@
         class="split">
         <ul class="">
             <li>
-                <a class="" onclick="expandSidebar()">
+                <a id="menu" onclick="expandSidebar()">
                     <i class="fas fa-bars"></i>
                 </a>
             </li>

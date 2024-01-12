@@ -19,6 +19,24 @@
       this.discapacidad = discapacidad;
       this.descDiscapacidad = descDiscapacidad;
     }
+    public UDiscapacidad(
+       int id,
+       string discapacidad,
+       string descDiscapacidad
+   )
+    {
+      this.id = id;
+      this.discapacidad = discapacidad;
+      this.descDiscapacidad = descDiscapacidad;
+    }
+    public UDiscapacidad(
+        string discapacidad,
+        string descDiscapacidad
+    )
+    {
+      this.discapacidad = discapacidad;
+      this.descDiscapacidad = descDiscapacidad;
+    }
 
     public UDiscapacidad() { }
   }

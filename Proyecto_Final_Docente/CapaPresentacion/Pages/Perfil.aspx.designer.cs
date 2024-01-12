@@ -24,6 +24,15 @@ namespace CapaPresentacion.Pages
     protected global::System.Web.UI.WebControls.Image imgPerfil;
 
     /// <summary>
+    /// nombrearchivo control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label nombrearchivo;
+
+    /// <summary>
     /// fufoto control.
     /// </summary>
     /// <remarks>
@@ -69,6 +78,15 @@ namespace CapaPresentacion.Pages
     protected global::System.Web.UI.WebControls.TextBox txtapemat;
 
     /// <summary>
+    /// ddltipo control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.DropDownList ddltipo;
+
+    /// <summary>
     /// txttipo control.
     /// </summary>
     /// <remarks>
@@ -87,22 +105,22 @@ namespace CapaPresentacion.Pages
     protected global::System.Web.UI.WebControls.TextBox txtdocumento;
 
     /// <summary>
-    /// txtsexo control.
+    /// ddlsexo control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtsexo;
+    protected global::System.Web.UI.WebControls.DropDownList ddlsexo;
 
     /// <summary>
-    /// txtestado control.
+    /// ddlestado control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtestado;
+    protected global::System.Web.UI.WebControls.DropDownList ddlestado;
 
     /// <summary>
     /// txtdireccion control.
@@ -150,6 +168,24 @@ namespace CapaPresentacion.Pages
     protected global::System.Web.UI.WebControls.TextBox txtubigeo;
 
     /// <summary>
+    /// smubigeo control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.ScriptManager smubigeo;
+
+    /// <summary>
+    /// upubigeo control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.UpdatePanel upubigeo;
+
+    /// <summary>
     /// ddldpto control.
     /// </summary>
     /// <remarks>
@@ -184,6 +220,15 @@ namespace CapaPresentacion.Pages
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtnacimineto;
+
+    /// <summary>
+    /// txtprecio control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox txtprecio;
 
     /// <summary>
     /// gvdiscapacidad control.

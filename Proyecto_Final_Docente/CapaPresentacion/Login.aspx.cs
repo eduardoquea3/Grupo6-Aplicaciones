@@ -19,15 +19,18 @@ namespace CapaPresentacion
     NLogin data = new NLogin();
     protected void btnregistro_Click(object sender, EventArgs e)
     {
-      bool val = data.validar(new ULogin(int.Parse(txtdocumento.Text), txtcorreo.Text));
+      bool val = data.validar(txtdocumento.Text, txtcorreo.Text);
+      mesage(txtdocumento.Text);
       if (val)
       {
         string username = cat.PrimaryWord(txtnombre.Text) + " ";
         data.agregar(new ULogin(
-            cat.Capitalize(txtnombre.Text), cat.Capitalize(txtpaterno.Text),
+            cat.Capitalize(txtnombre.Text),
+            cat.Capitalize(txtpaterno.Text),
             cat.Capitalize(txtmaterno.Text),
             cat.Capitalize(username + txtpaterno.Text),
-            ddltipo.SelectedValue, int.Parse(txtdocumento.Text),
+            (ddltipo.SelectedIndex + 1).ToString(),
+            txtdocumento.Text,
             txtcorreo.Text, txtpassword.Text)
             );
         mesage("Se creo la cuenta correctamente");

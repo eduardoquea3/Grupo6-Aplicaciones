@@ -45,14 +45,17 @@ picture {
   align-items: center;
   flex-direction: column;
   gap: 20px;
+
   & img {
     width: 300px;
     max-height: 500px;
     border-radius: 15px;
   }
+
   & .fileupload {
     display: flex;
   }
+
   & #archivo {
     display: grid;
     place-content: center;
@@ -61,21 +64,25 @@ picture {
     height: 45px;
     font-size: 1.1rem;
     padding: 5px 10px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 10px 10px 10px;
+
     &:hover {
       background: rgb(161 202 235);
     }
-    &:hover + p {
+
+    &:hover+p {
       background: rgb(198 218 235);
     }
   }
-  & #nombreArchivo {
+
+  & #ContentPlaceHolder1_nombrearchivo {
     display: grid;
     place-content: center;
     background: var(--tercero);
     width: 150px;
     height: 45px;
-    font-size: 1.3rem;
+    font-size: 1.0rem;
+    font-weight: 400;
     padding: 5px 10px;
     border-radius: 0 10px 10px 0;
   }
@@ -86,6 +93,7 @@ label {
   font-weight: 500;
   grid-column: span 3;
 }
+
 .full {
   grid-column: span 6;
 }
@@ -101,11 +109,13 @@ input {
   font-size: 20px !important;
   font-weight: 500 !important;
 }
+
 input:hover,
 input:focus {
   background: #f2f9ff;
   border: 2px solid var(--primero);
 }
+
 input:focus {
   outline: none;
   border: 2px solid var(--primero);
@@ -113,6 +123,7 @@ input:focus {
 
 input[readonly="readonly"] {
   background: #d7e6f3;
+
   &:focus,
   &:hover {
     border: 2px solid var(--primero);
@@ -127,7 +138,7 @@ select {
   /* other styles for aesthetics */
   width: 90%;
   height: 44px;
-  padding: 0.675em 1em 0.675em 1em;
+  padding: 0em 1em 0em 1em !important;
   background-color: #fff;
   border: 2px solid var(--primero);
   border-radius: 0.5rem;
@@ -135,6 +146,7 @@ select {
   cursor: pointer;
   outline: none;
   font-weight: 500;
+
   &:hover {
     background: #00000009;
   }
@@ -146,6 +158,7 @@ div.table {
   display: flex;
   justify-content: center;
   align-items: center;
+
   & input {
     font-size: 18px;
     font-weight: 400;
@@ -154,14 +167,17 @@ div.table {
     border-radius: 6px;
   }
 }
+
 div.button {
   grid-column: span 6;
   display: flex;
   justify-content: space-evenly;
 }
+
 input[type="submit"] {
   width: 40%;
 }
+
 input.btn {
   background: #5579cb;
   color: white;
@@ -174,6 +190,7 @@ input.btn {
   font-size: 18px;
   background: var(--tercero);
   transition: all 0.2s;
+
   &:hover {
     color: var(--primero);
     background: var(--cuarto);
@@ -200,6 +217,7 @@ input.btn {
   align-items: center;
   flex-direction: column;
   border-radius: 25px;
+
   & main {
     width: 90%;
     height: 90%;
@@ -208,9 +226,11 @@ input.btn {
     justify-content: center;
     align-items: center;
     gap: 10px;
+
     & input {
       width: 60%;
     }
+
     & input.btn {
       width: 300px;
       background: var(--primero);
@@ -233,6 +253,78 @@ div.container {
   width: 100%;
   height: 100%;
 }
+
 #ContentPlaceHolder1_fufoto {
   display: none;
+}
+
+select.select {
+  grid-column: span 3;
+}
+
+div#ContentPlaceHolder1_upubigeo {
+  grid-column: span 6;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  & select {
+    grid-column: span 1;
+  }
+}
+
+div.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+table tbody {
+  font-size: 20px;
+
+  & th {
+    color: white;
+    background: var(--segundo);
+  }
+
+  & tr:hover>td {
+    background: #f6f3f3;
+    color: var(--primero);
+  }
+
+  & tr:last-child td:first-child {
+    border-radius: 0 0 0 15px !important;
+  }
+
+  & tr:last-child td:last-child {
+    border-radius: 0 0 15px 0 !important;
+  }
+
+  & th,
+  td {
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  & td {
+    background: white;
+  }
+
+  & th:first-child {
+    border-radius: 15px 0 0 0 !important;
+  }
+
+  & th:last-child {
+    border-radius: 0 15px 0 0 !important;
+  }
+
+}
+
+input#ContentPlaceHolder1_btnadd {
+  color: white;
+}
+
+.link {
+  background: #cadce9;
 }

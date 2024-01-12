@@ -8,7 +8,7 @@ namespace CapaEntidad
     public string apellidoMat { get; set; }
     public string username { get; set; }
     public string tipo { get; set; }
-    public int documento { get; set; }
+    public string documento { get; set; }
     public string correo { get; set; }
     public string contra { get; set; }
 
@@ -18,7 +18,7 @@ namespace CapaEntidad
         string apellidoMat,
         string username,
         string tipo,
-        int documento,
+        string documento,
         string correo,
         string contra
     )
@@ -39,17 +39,6 @@ namespace CapaEntidad
       this.contra = contra;
     }
 
-    public ULogin(int documento, string correo)
-    {
-      this.correo = correo;
-      this.documento = documento;
-    }
-
-    public ULogin(int id)
-    {
-      this.id = id;
-    }
-
     public ULogin() { }
 
     public ULogin(
@@ -58,10 +47,30 @@ namespace CapaEntidad
         string apeM,
         string username,
         string tipo,
-        int doc,
+        string doc,
         string correo
     )
     {
+      this.nombre = nombre;
+      this.apellidoPat = apeP;
+      this.apellidoMat = apeM;
+      this.username = username;
+      this.tipo = tipo;
+      this.documento = doc;
+      this.correo = correo;
+    }
+    public ULogin(
+        int id,
+        string nombre,
+        string apeP,
+        string apeM,
+        string username,
+        string tipo,
+        string doc,
+        string correo
+    )
+    {
+      this.id = id;
       this.nombre = nombre;
       this.apellidoPat = apeP;
       this.apellidoMat = apeM;

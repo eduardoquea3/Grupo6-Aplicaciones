@@ -6,23 +6,26 @@
 }
 
 fieldset {
-  width: 1400px;
+  min-width: 800px;
   min-height: 160px;
+  padding: 30px;
   height: auto;
   border: 2px solid rgb(87 153 255/0.4);
-  background: var(--tercero);
+  background: white;
   border-radius: 16px;
 }
+
 legend {
   margin: 0 0 0 20px;
   font-size: 40px;
   color: var(--primero);
   font-weight: 500;
-  background: var(--tercero);
+  background: white;
   border-radius: 16px;
   width: 360px;
   text-align: center;
 }
+
 section.start {
   width: 100%;
   height: 100%;
@@ -38,6 +41,7 @@ section.start {
   display: flex;
   justify-content: center;
   align-items: center;
+
   & img {
     width: 300px;
     max-height: 500px;
@@ -54,6 +58,7 @@ form {
 div.aspNetHidden {
   display: none;
 }
+
 .start main {
   width: 100%;
   padding: 0 10%;
@@ -63,6 +68,7 @@ div.aspNetHidden {
   align-items: center;
   text-align: center;
   gap: 10px 0;
+
   & span.head {
     font-size: 40px;
     font-weight: 700;
@@ -74,13 +80,15 @@ div.aspNetHidden {
     border-style: solid;
     border-radius: 24px;
   }
+
   & span.datos {
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: 500;
-    grid-column: span 2;
+    grid-column: span 3;
   }
+
   & label {
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: 700;
     grid-column: span 2;
   }
@@ -98,6 +106,7 @@ div.aspNetHidden {
   font-size: 18px;
   background: var(--tercero);
   transition: all 0.2s;
+
   &:hover {
     color: var(--primero);
     background: var(--cuarto);
@@ -112,16 +121,19 @@ section.extras div {
   grid-template-columns: repeat(4, 20%);
   padding: 2% 2%;
   width: 90%;
-  gap: 20px 10px;
+  gap: 20px 20px;
+
   & label,
   span {
     font-size: 30px;
     font-weight: 500;
   }
+
   & label {
     font-weight: 700;
     text-align: center;
   }
+
   &:has(table) {
     padding: 20px;
   }
@@ -140,23 +152,54 @@ section.data {
 
 table tbody {
   font-size: 20px;
+
   & tr:has(th) {
     background: var(--segundo);
+
     & th {
       color: white;
     }
   }
-  & tr:hover > td {
+
+  & tr:hover>td {
     background: #f0f0f0;
     color: var(--primero);
   }
+
+  & tr:last-child td:first-child {
+    border-radius: 0 0 0 15px !important;
+  }
+
+  & tr:last-child td:last-child {
+    border-radius: 0 0 15px 0 !important;
+  }
+
   & th,
   td {
     padding: 10px 20px;
     text-align: center;
   }
+
   & td {
-    border: 1px solid #55555544;
     background: white;
+  }
+
+  & th:first-child {
+    border-radius: 15px 0 0 0 !important;
+  }
+
+  & th:last-child {
+    border-radius: 0 15px 0 0 !important;
+  }
+
+}
+
+table.curso {
+  & th:first-child {
+    border-radius: 15px 15px 0 0 !important;
+  }
+
+  & tr:last-child td:last-child {
+    border-radius: 0 0 15px 15px !important;
   }
 }
