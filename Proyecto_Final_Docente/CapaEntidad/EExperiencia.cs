@@ -35,7 +35,8 @@
         string cargo,
         string empresa,
         string fInicio,
-        string fFin
+        string fFin,
+        string certificado
     )
     {
       this.id = id;
@@ -44,6 +45,7 @@
       this.empresa = empresa;
       this.fInicio = fInicio;
       this.fFin = fFin;
+      this.certificado = certificado;
     }
   }
 }

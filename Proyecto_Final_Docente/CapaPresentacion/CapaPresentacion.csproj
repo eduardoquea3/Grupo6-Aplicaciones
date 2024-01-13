@@ -70,6 +70,7 @@
     <Content Include="css\academico.css" />
     <Content Include="css\Academico\Agregar.css" />
     <Content Include="css\Academico\Eliminar.css" />
+    <Content Include="css\Academico\Modificar.css" />
     <Content Include="css\actionExperiencia.css" />
     <Content Include="css\curso.css" />
     <Content Include="css\Curso\Agregar.css" />
@@ -79,6 +80,7 @@
     <Content Include="css\inicio.css" />
     <Content Include="css\layout.css" />
     <Content Include="css\login.css" />
+    <Content Include="css\ModificarE.css" />
     <Content Include="css\newpass.css" />
     <Content Include="css\password.css" />
     <Content Include="css\perfil.css" />
@@ -91,10 +93,13 @@
     <Content Include="Login.aspx" />
     <Content Include="Pages\Academico\Agregar.aspx" />
     <Content Include="Pages\Academico\Eliminar.aspx" />
+    <Content Include="Pages\Academico\Modificar.aspx" />
     <Content Include="Pages\Cursos\Agregar.aspx" />
     <Content Include="Pages\Cursos\Eliminar.aspx" />
     <Content Include="Pages\Experiencia\Agregar.aspx" />
+    <Content Include="Pages\Experiencia\agregar.js" />
     <Content Include="Pages\Experiencia\Eliminar.aspx" />
+    <Content Include="Pages\Experiencia\Modificar.aspx" />
     <Content Include="Pages\Inicio.aspx" />
     <Content Include="Pages\NewPass.aspx" />
     <Content Include="Pages\Perfil.aspx" />
@@ -128,6 +133,13 @@
     <Compile Include="Pages\Academico\Eliminar.aspx.designer.cs">
       <DependentUpon>Eliminar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Academico\Modificar.aspx.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Academico\Modificar.aspx.designer.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Cursos\Agregar.aspx.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,6 +167,13 @@
     </Compile>
     <Compile Include="Pages\Experiencia\Eliminar.aspx.designer.cs">
       <DependentUpon>Eliminar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Experiencia\Modificar.aspx.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Experiencia\Modificar.aspx.designer.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Layout.Master.cs">
       <DependentUpon>Layout.Master</DependentUpon>
@@ -250,6 +269,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="imagenes\foto\" />
+    <Folder Include="pdf\academico\" />
+    <Folder Include="pdf\curso\" />
+    <Folder Include="pdf\experiencia\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

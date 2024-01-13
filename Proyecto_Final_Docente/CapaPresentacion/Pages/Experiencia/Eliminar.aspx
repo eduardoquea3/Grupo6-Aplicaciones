@@ -12,14 +12,14 @@
       <h2>Eliminar Experiencia</h2>
       <label>Fecha de inicio</label>
       <label>Fecha de finalizacion</label>
-      <asp:TextBox ID="txtfinicio" runat="server" CssClass="input" ReadOnly="true"></asp:TextBox>
-      <asp:TextBox ID="txtffin" runat="server" CssClass="input" ReadOnly="true"></asp:TextBox>
+      <asp:TextBox ID="txtfinicio" runat="server" CssClass="input none" ReadOnly="true"></asp:TextBox>
+      <asp:TextBox ID="txtffin" runat="server" CssClass="input none" ReadOnly="true"></asp:TextBox>
       <label>Cargo</label>
       <label>Empresa</label>
-      <asp:TextBox ID="txtcargo" runat="server" CssClass="input" ReadOnly="true"></asp:TextBox>
-      <asp:TextBox ID="txtempresa" runat="server" CssClass="input" ReadOnly="true"></asp:TextBox>
-      <asp:Button ID="btnagregar" runat="server" Text="Eliminar" CssClass="btn"/>
-      <asp:Button ID="btncancelar" runat="server" Text="Cancelar" CssClass="btn"/>
+      <asp:TextBox ID="txtcargo" runat="server" CssClass="input none" ReadOnly="true"></asp:TextBox>
+      <asp:TextBox ID="txtempresa" runat="server" CssClass="input none" ReadOnly="true"></asp:TextBox>
+      <asp:Button ID="btnagregar" runat="server" Text="Eliminar" CssClass="btn" OnClick="btnagregar_Click"/>
+      <asp:Button ID="btncancelar" runat="server" Text="Cancelar" CssClass="btn" OnClick="btncancelar_Click"/>
     </form>
 </body>
 </html>

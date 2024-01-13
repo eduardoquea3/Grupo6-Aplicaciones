@@ -17,12 +17,11 @@
     <label>Fecha de Grado</label>
     <asp:TextBox ID="txtfgrado" runat="server" TextMode="Date" CssClass="input"></asp:TextBox>
     <div class="file">
-      <label>Subir Archivo</label>
-      <p>none</p>
-      <asp:FileUpload ID="fupdf" runat="server" CssClass="hidden" />
+      <label for="fupdf">Subir Archivo</label>
+      <asp:FileUpload ID="fupdf" runat="server" CssClass="hidden" accept=".pdf" />
     </div>
-    <asp:Button ID="btnagregar" runat="server" CssClass="btn" Text="Agregar" />
-    <asp:Button ID="btnno" runat="server" CssClass="btn" Text="Cancelar" />
+    <asp:Button ID="btnagregar" runat="server" CssClass="btn" Text="Agregar" OnClick="btnagregar_Click"/>
+    <asp:Button ID="btnno" runat="server" CssClass="btn" Text="Cancelar" OnClick="btnno_Click"/>
   </form>
 </body>
 </html>

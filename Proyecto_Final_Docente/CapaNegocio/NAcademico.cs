@@ -11,5 +11,21 @@ namespace CapaNegocio
     {
       return cat.datos(id);
     }
+    public void agregarA(EAcademico a)
+    {
+      cat.agregarA(a);
+    }
+    public void eliminarA(int id, int idA)
+    {
+      cat.eliminarA(id, idA);
+    }
+    public EAcademico obtener(int id, int idA)
+    {
+      return cat.obtener(id, idA);
+    }
+    public void actualizar(EAcademico a)
+    {
+      cat.actualizar(a);
+    }
   }
 }

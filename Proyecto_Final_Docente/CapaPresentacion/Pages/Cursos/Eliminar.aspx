@@ -9,10 +9,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-      <h2>Eliminar de la lista de cursos dictado</h2>
-      <p>Esta seguro de eliminar el curso de tu lista</p>
-      <asp:Button ID="btnsi" runat="server" CssClass="btn" Text="Si"/>
-      <asp:Button ID="btnno" runat="server" CssClass="btn" Text="No"/>
+      <h2>
+        <asp:Label ID="lblcurso" runat="server"></asp:Label>
+      </h2>
+      <p>Esta seguro de eliminar el curso de su lista</p>
+      <asp:Button ID="btnsi" runat="server" CssClass="btn" Text="Si" OnClick="btnsi_Click"/>
+      <asp:Button ID="btnno" runat="server" CssClass="btn" Text="No" OnClick="btnno_Click"/>
     </form>
 </body>
 </html>

@@ -125,6 +125,37 @@ namespace CapaDatos
         }
       }
     }
-
+    public string obtenerCurso(int id)
+    {
+      string r = "";
+      using (SqlConnection cn = new Conection().conectar())
+      {
+        SqlCommand cmd = new SqlCommand();
+        try
+        {
+          cmd.Connection = cn;
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.CommandText = "sp_C_obtenerCurso";
+          cmd.Parameters.AddWithValue("@idC", id);
+          cn.Open();
+          using (SqlDataReader rd = cmd.ExecuteReader())
+          {
+            while (rd.Read())
+            {
+              r = rd.GetString(0);
+            }
+          }
+        }
+        catch (Exception ex)
+        {
+          throw new Exception(ex.Message);
+        }
+        finally
+        {
+          cn.Dispose();
+        }
+      }
+      return r;
+    }
   }
 }

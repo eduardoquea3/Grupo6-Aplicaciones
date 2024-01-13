@@ -16,5 +16,17 @@ namespace CapaNegocio
     {
       return cat.listarCursosD(id);
     }
+    public void agregarCurso(int id, int idC)
+    {
+      cat.agregarCurso(id, idC);
+    }
+    public void eliminarCurso(int id, int idC)
+    {
+      cat.eliminarCurso(id, idC);
+    }
+    public string obtenerCurso(int id)
+    {
+      return cat.obtenerCurso(id);
+    }
   }
 }

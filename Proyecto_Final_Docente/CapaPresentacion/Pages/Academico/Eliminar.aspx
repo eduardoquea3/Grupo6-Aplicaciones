@@ -12,8 +12,8 @@
     <h2>Eliminar dato académico</h2>
     <p>Deseas eliminar este dato académico</p>
     <asp:Label ID="lbldato" runat="server"></asp:Label>
-    <asp:Button ID="btneliminar" runat="server" CssClass="btn" Text="Sí"/>
-    <asp:Button ID="btnno" runat="server" CssClass="btn" Text="No"/>
+    <asp:Button ID="btneliminar" runat="server" CssClass="btn" Text="Sí" OnClick="btneliminar_Click"/>
+    <asp:Button ID="btnno" runat="server" CssClass="btn" Text="No" OnClick="btnno_Click"/>
   </form>
 </body>
 </html>

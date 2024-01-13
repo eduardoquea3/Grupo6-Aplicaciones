@@ -498,5 +498,39 @@ namespace CapaDatos
       }
       return r;
     }
+    public bool validarData(string doc, string correo)
+    {
+      bool r = true;
+      using (SqlConnection cn = new Conection().conectar())
+      {
+        try
+        {
+          SqlCommand cmd = new SqlCommand();
+          cmd.Connection = cn;
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.CommandText = "sp_R_verificarData";
+          cmd.Parameters.AddWithValue("@doc", doc);
+          cmd.Parameters.AddWithValue("@correo", correo);
+          cn.Open();
+          using (SqlDataReader dr = cmd.ExecuteReader())
+          {
+            if (dr.HasRows)
+            {
+              r = false;
+            }
+          }
+          cn.Close();
+        }
+        catch (Exception ex)
+        {
+          throw new Exception(ex.Message);
+        }
+        finally
+        {
+          cn.Dispose();
+        }
+      }
+      return r;
+    }
   }
 }

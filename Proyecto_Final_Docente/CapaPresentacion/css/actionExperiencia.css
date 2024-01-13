@@ -34,12 +34,13 @@ form {
   width: 800px;
   border-radius: 10px;
   display: grid;
-  grid-template-columns: repeat(4,25%);
-  grid-template-rows: repeat(7,1fr);
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(7, 1fr);
   padding: 1% 5%;
   gap: 10px;
-  &.eliminar{
-    grid-template-rows: repeat(6,1fr);
+
+  &.eliminar {
+    grid-template-rows: repeat(6, 1fr);
   }
 }
 
@@ -50,7 +51,8 @@ h2 {
   grid-column: span 4;
 }
 
-input[type="text"]{
+input[type="text"],
+input[type="date"] {
   height: 44px;
   width: 80%;
   border-radius: 8px;
@@ -72,6 +74,7 @@ input[type="text"]{
     border-width: 1px 1px 3px;
     border-radius: 15px;
   }
+
   &::placeholder {
     color: rgb(85 121 203/0.6);
     font-size: 18px;
@@ -100,6 +103,7 @@ label {
   font-size: 18px;
   background: var(--tercero);
   transition: all 0.2s;
+
   &:hover {
     color: var(--primero);
     background: var(--cuarto);
@@ -111,32 +115,42 @@ label {
   display: none;
 }
 
-div.aspNetHidden{
+div.aspNetHidden {
   display: none;
 }
 
-div{
+div {
   grid-column: span 4;
   display: flex;
   justify-content: center;
-  & label,p{
+
+  & label,
+  p {
     width: 150px;
     height: 44px;
     display: grid;
     place-content: center;
   }
-  & label{
+
+  & label {
     background: var(--cuarto);
-    border-radius: 10px 0 0 10px;
-    &:hover{
+    border-radius: 10px;
+
+    &:hover {
       background: rgb(161 202 235);
     }
-    &:hover + p{
+
+    &:hover+p {
       background: rgb(198 218 235);
     }
   }
-  & p{
+
+  & p {
     background: var(--tercero);
     border-radius: 0 10px 10px 0;
   }
+}
+
+.none {
+  background: #dfedff;
 }

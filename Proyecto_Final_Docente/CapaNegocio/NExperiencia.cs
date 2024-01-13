@@ -11,5 +11,21 @@ namespace CapaNegocio
     {
       return cat.datos(id);
     }
+    public void agregarE(EExperiencia e)
+    {
+      cat.agregarE(e);
+    }
+    public void eliminarE(int id, int idE)
+    {
+      cat.eliminarE(id, idE);
+    }
+    public EExperiencia obtener(int id, int idE)
+    {
+      return cat.obtener(id, idE);
+    }
+    public void actualizar(EExperiencia a)
+    {
+      cat.actualizar(a);
+    }
   }
 }

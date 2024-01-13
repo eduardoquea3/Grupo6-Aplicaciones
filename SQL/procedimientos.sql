@@ -87,7 +87,7 @@ end
 create proc sp_I_listarDatosAcademicos
   @id int
 as
-select id, idDatos, titulo, centroEstudios, fechaGrado
+select id, idDatos, titulo, centroEstudios, fechaGrado, subirTitulo
 from DatosAcademicos
 where id=@id
 go
@@ -96,7 +96,7 @@ go
 create proc sp_I_listarExperiencias
   @id int
 as
-select id, idExpe, cargo, empresa, f_Inicio, f_Fin
+select id, idExpe, cargo, empresa, f_Inicio, f_Fin, certificado
 from Experencias
 where id=@id
 go
@@ -365,3 +365,59 @@ as
 select curso
 from Cursos
 where idCurso=@idC
+
+--TODO: obtener experiencia
+create proc sp_E_obtener
+  @id int,
+  @idE int
+as
+select *
+from Experencias
+where id=@id and idExpe=@idE
+
+--TODO: actulizar experiencia
+create proc sp_E_actualizar
+  @id int,
+  @idE int,
+  @fi varchar(15),
+  @ff varchar(15),
+  @cargo varchar(50),
+  @emp varchar(100),
+  @certi varchar(50)
+as
+update Experencias
+    set f_Inicio=@fi,f_Fin=@ff,cargo=@cargo,
+    empresa=@emp,certificado=@certi
+    where id=@id and idExpe=@idE
+
+--TODO:obtener datos academicos
+create proc sp_A_obtener
+  @id int,
+  @idA int
+as
+select *
+from DatosAcademicos
+where id=@id and idDatos=@idA
+
+--TODO:actulizar datos academicos
+create proc sp_A_actualizar
+  @id int,
+  @idA int,
+  @fg varchar(15),
+  @centro varchar(100),
+  @titulo varchar(100),
+  @pdf varchar(100)
+as
+update DatosAcademicos
+    set fechaGrado=@fg ,centroEstudios=centroEstudios ,
+    titulo=@titulo ,subirTitulo=@pdf
+    where id=@id and idDatos=@idA
+
+--TODO:verificar documento y correo no sean iguales
+create proc sp_R_verificarData
+  @doc varchar(10),
+  @correo varchar(50)
+as
+select *
+from UsuarioDocente
+where doc=convert(bigint,@doc) or correo=@correo

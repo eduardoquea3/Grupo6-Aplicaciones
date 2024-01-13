@@ -64,5 +64,9 @@ namespace CapaNegocio
     {
       cat.actualizarDatosLogin(us);
     }
+    public bool validarData(string doc, string correo)
+    {
+      return cat.validarData(doc, correo);
+    }
   }
 }

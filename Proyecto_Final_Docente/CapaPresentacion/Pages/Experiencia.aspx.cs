@@ -31,8 +31,11 @@ namespace CapaPresentacion.Pages
 
     protected void btnagregar_Click(object sender, EventArgs e)
     {
-      id = int.Parse(Request.QueryString["id"].ToString());
-      Response.Redirect($"./Experiencia/Agregar.aspx?id={id}");
+      if (Request.QueryString["id"] != null)
+      {
+        id = int.Parse(Request.QueryString["id"].ToString());
+        Response.Redirect($"./Experiencia/Agregar.aspx?id={id}");
+      }
     }
   }
 }
