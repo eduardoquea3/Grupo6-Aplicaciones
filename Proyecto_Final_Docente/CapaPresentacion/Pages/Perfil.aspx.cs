@@ -32,29 +32,29 @@ namespace CapaPresentacion.Pages
 
     protected void btnguardar_Click(object sender, EventArgs e)
     {
-      if (reg.validarData(txtdocumento.Text, txtcorreo.Text))
-      {
-        id = int.Parse(Request.QueryString["id"].ToString());
-        string ub = reg.obtenerUbigeo(new EUbigeo(ddldpto.SelectedValue, ddlprov.SelectedValue, ddldistrito.SelectedValue));
-        string r = guardar();
-        id = int.Parse(Request.QueryString["id"].ToString());
-        reg.actualizarDatosLogin(new ULogin(id, txtname.Text,
-          txtapepat.Text, txtapemat.Text, txtusername.Text,
-          (ddltipo.SelectedIndex + 1).ToString(), txtdocumento.Text, txtcorreo.Text));
-        reg.ingresarDatosR(new URegistro(
-          id, ddltipo.SelectedIndex + 1, ddlestado.SelectedIndex + 1,
-          txtdireccion.Text, ub, txttelefono.Text,
-          txtcelular.Text, r, txtnacimineto.Text,
-          double.Parse(txtprecio.Text)
-          ));
-        Registro(id);
-      }
-      else
-      {
-        id = int.Parse(Request.QueryString["id"].ToString());
-        mesage("El documento o el correo ya estan en uso");
-        Response.Redirect($"Perfil.aspx?id={id}");
-      }
+      //if (reg.validarData(txtdocumento.Text, txtcorreo.Text))
+      //{
+      id = int.Parse(Request.QueryString["id"].ToString());
+      string ub = reg.obtenerUbigeo(new EUbigeo(ddldpto.SelectedValue, ddlprov.SelectedValue, ddldistrito.SelectedValue));
+      string r = guardar();
+      id = int.Parse(Request.QueryString["id"].ToString());
+      reg.actualizarDatosLogin(new ULogin(id, txtname.Text,
+        txtapepat.Text, txtapemat.Text, txtusername.Text,
+        (ddltipo.SelectedIndex + 1).ToString(), txtdocumento.Text, txtcorreo.Text));
+      reg.ingresarDatosR(new URegistro(
+        id, ddltipo.SelectedIndex + 1, ddlestado.SelectedIndex + 1,
+        txtdireccion.Text, ub, txttelefono.Text,
+        txtcelular.Text, r, txtnacimineto.Text,
+        double.Parse(txtprecio.Text)
+        ));
+      Registro(id);
+      //}
+      //else
+      //{
+      //id = int.Parse(Request.QueryString["id"].ToString());
+      //mesage("El documento o el correo ya estan en uso");
+      //Response.Redirect($"Perfil.aspx?id={id}");
+      //}
     }
 
     public void Usuario(int id)
