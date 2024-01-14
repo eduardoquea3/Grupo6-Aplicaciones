@@ -1,0 +1,46 @@
+﻿ @model List<ProyectoFinalUsuarioAdmin.Models.ModeloVistaPersonalizado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Datos</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tipo de Documento</th>
+                <th>Número de Documento</th>
+                <th>Nombre Completo</th>
+                <th>Sexo</th>
+                <th>Estado Civil</th>
+                <th>Dirección</th>
+                <th>Distrito</th>
+                <th>Provincia</th>
+                <th>Departamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TipoDocumento</td>
+                    <td>@item.NumeroDocumento</td>
+                    <td>@item.NombreCompleto</td>
+                    <td>@item.sexo</td>
+                    <td>@item.estado</td>
+                    <td>@item.direccion</td>
+                    <td>@item.distrito</td>
+                    <td>@item.Provencia</td>
+                    <td>@item.Departamento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay datos disponibles.</p>
+}

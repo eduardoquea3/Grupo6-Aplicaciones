@@ -39,8 +39,7 @@ namespace ProyectoFinalUsuarioAdmin.Controllers
             }
             if (perfilUsuario != "Jefatura")
             {
-                ModelState.AddModelError("", "No tienes permisos para acceder a esta página.");
-                return View(); // Retorna la vista de inicio de sesión con un mensaje de error
+                return RedirectToAction("Index", "Home"); // Retorna la vista de inicio de sesión con un mensaje de error
             }
 
             // Redireccionar directamente a la página de inicio ("Home")

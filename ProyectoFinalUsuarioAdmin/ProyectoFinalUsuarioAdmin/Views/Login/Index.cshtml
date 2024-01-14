@@ -3,36 +3,76 @@
 @{
     ViewBag.Title = "Inicio de Sesión";
 }
+<!DOCTYPE html>
+<html>
+
 <head>
-    <!-- Otras etiquetas del head... -->
-    <link href="~/Scripts/login.css" rel="stylesheet" />
-</head><h2>Iniciar Sesión</h2>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/a2dd6065c4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-@using (Html.BeginForm("Login", "Login", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
+    <link rel="stylesheet" type="text/css" href="~/Content/Login.css">
+    <title>Login Registro</title>
+</head>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.nombreUsuario, htmlAttributes: new { @class = "control-label" })
-        @Html.EditorFor(model => model.nombreUsuario, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.nombreUsuario, "", new { @class = "text-danger" })
+<body>
+    <header>
+        <h2 class="logo">ARANGO</h2>
+        <nav class="navegacion">
+            <a href="">Inicio</a>
+            <a href="#">Informacion</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contactos</a>
+            <button class="btns">Iniciar Sesion</button>
+        </nav>
+    </header>
+
+    <div class="fondo">
+        <img src="~/Imagnes/Nueva.jpg" alt="Alternate Text" style="width: 100%; height: 100%; object-fit: cover;" />
+
+        <span class="icono-cerrar"><i class="fa-solid fa-cerrar"></i></span>
+
+        <div class="contenedor-form login">
+            <h2>Iniciar Sesion</h2>
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+        <div class="contenedor-input">
+            <span class="icono"><i class="fa-solid fa-user"></i></span>
+            @Html.EditorFor(model => model.nombreUsuario, new { htmlAttributes = new { @class = "form-control", placeholder = "Nombre Usuario" } })
+            @Html.ValidationMessageFor(model => model.nombreUsuario, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="contenedor-input">
+            <span class="icono" id="toggleIcon" onclick="togglePasswordVisibility()">
+                <i class="fa-solid fa-eye"></i>
+            </span>
+            @Html.PasswordFor(model => model.contra, new { @class = "form-control", placeholder = "Contraseña", id = "passwordField", required = "required" })
+            @Html.ValidationMessageFor(model => model.contra, "", new { @class = "text-danger" })
+        </div>
+
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fas fa-icono-deseado"></i></span>
+                    @Html.DropDownListFor(model => model.PerfilUsuario, (IEnumerable<SelectListItem>)ViewBag.PerfilUsuario, "-- Seleccionar --", new { @class = "form-control" })
+                </div>
+
+                <div class="recordar">
+                    <label for="#"><input type="checkbox"> Recordar Sesión</label>
+                    <a href="#">¿Olvidaste tu Contraseña</a>
+                </div>
+
+                <button type="submit" class="btn">Iniciar Sesión</button>
+
+                <div class="Registrar">
+                    <p> ¿No tiene Cuenta <a href="#" class="Registrar-link">Registrarse</a></p>
+                </div>
+            }
+        </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.contra, htmlAttributes: new { @class = "control-label" })
-        @Html.PasswordFor(model => model.contra, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.contra, "", new { @class = "text-danger" })
-    </div>
+    <script src="~/Scripts/Login.js"></script>
+</body>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.PerfilUsuario, htmlAttributes: new { @class = "control-label" })
-        @Html.DropDownListFor(model => model.PerfilUsuario, (IEnumerable<SelectListItem>)ViewBag.PerfilUsuario, "-- Seleccionar --", new { @class = "form-control" })
-    </div>
-
-    <div class="form-group">
-        <input type="submit" value="Iniciar Sesión" class="btn btn-primary" />
-    </div>
-    <div>
-        @Html.ActionLink("Registrar Nuevo Usuario Administrativo", "Agregar", "UsuarioAdmin", null, new { @class = "btn btn-success" })
-    </div>
-}
+</html>

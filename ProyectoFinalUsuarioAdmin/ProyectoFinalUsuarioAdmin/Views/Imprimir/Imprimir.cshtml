@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Imprimir";
+    Layout = null; // No usar un diseño para esta vista
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Imprimir</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <CrystalDecisions.Web.CrystalReportViewer ID="CrystalReportViewer1"
+                                                  runat="server"
+                                                  AutoDataBind="true"
+                                                  Width="1000"
+                                                  Height="600">
+        </CrystalDecisions.Web.CrystalReportViewer>
+    </div>
+</body>
+</html>
+
+

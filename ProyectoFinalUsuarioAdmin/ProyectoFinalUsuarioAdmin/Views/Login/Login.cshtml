@@ -1,21 +1,31 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Login";
 }
 
 <h2>Login</h2>
 @if (ViewData.ModelState.Count > 0)
 {
-    <div class="alert alert-danger">
-        <strong>Error:</strong> @Html.ValidationSummary(false)
-    </div>
+    
 }
+@if (User.IsInRole("Jefatura"))
+{
+    <div class="alert alert-success">
+        <p>Has iniciado sesión correctamente.</p>
+    </div>
 
-<p>Has iniciado sesión correctamente. Redirigiendo...</p>
-
-<script>
-    setTimeout(function () {
-        window.location.href = '@Url.Action("UsuarioAdmin", "UsuarioAdmin")'; // Redirige a la página principal (Home)
-    }, 3000); // Redirige después de 3 segundos (puedes ajustar el tiempo según sea necesario)
-</script>
-
+    <script>
+        setTimeout(function () {
+            window.location.href = '@Url.Action("UsuarioAdmin", "UsuarioAdmin")'; // Redirige a la página principal (UsuarioAdmin)
+        }, 3000); 
+        // Redirige después de 3 segundos (puedes ajustar el tiempo según sea necesario)
+        alert("¡Bienvenido, Jefatura!");
+    </script>
+}
+else
+{
+    <script>
+        setTimeout(function () {
+            window.location.href = '@Url.Action("Index", "Home")'; // Redirige a la página principal (Home)
+        }, 3000); // Redirige después de 3 segundos (puedes ajustar el tiempo según sea necesario)
+    </script>
+}

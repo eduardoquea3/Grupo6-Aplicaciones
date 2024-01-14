@@ -118,6 +118,75 @@ body.inicio {
     background-size: cover;
     /* Otros estilos que desees aplicar para el fondo */
 }
-  
+/* Agrega estos estilos al final de tu archivo CSS o enlázalos desde un archivo externo */
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #333; /* Cambia el color de fondo según tus preferencias */
+}
+
+.avatar {
+    width: 40px; /* Ajusta el tamaño del avatar según tus preferencias */
+    height: 40px;
+    border-radius: 50%; /* Hace que el avatar sea redondo */
+    margin-right: 10px; /* Espaciado entre el avatar y la información del usuario */
+}
+
+.user-info {
+    color: white; /* Cambia el color del texto según tus preferencias */
+}
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #333; /* Cambia el color de fondo según tus preferencias */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.avatar {
+    width: 40px; /* Ajusta el tamaño del avatar según tus preferencias */
+    height: 40px;
+    border-radius: 50%; /* Hace que el avatar sea redondo */
+    margin-right: 10px; /* Espaciado entre el avatar y la información del usuario */
+}
+
+.user-info {
+    color: white; /* Cambia el color del texto según tus preferencias */
+}
+.user-profile {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333; /* Cambia el color de fondo según tus preferencias */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+    .user-profile.show {
+        display: flex;
+    }
+
+.avatar {
+    width: 40px; /* Ajusta el tamaño del avatar según tus preferencias */
+    height: 40px;
+    border-radius: 50%; /* Hace que el avatar sea redondo */
+    margin-right: 10px; /* Espaciado entre el avatar y la información del usuario */
+}
+
+.user-info {
+    color: white; /* Cambia el color del texto según tus preferencias */
+}
+.inicio 
+
+
+
 
 

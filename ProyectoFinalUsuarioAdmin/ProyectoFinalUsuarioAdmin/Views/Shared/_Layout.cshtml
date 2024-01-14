@@ -1,4 +1,23 @@
-﻿<!DOCTYPE html>
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h2></h2>
+@if (ViewData.ModelState.Count > 0)
+{
+    <div class="alert alert-danger">
+        <strong>Error:</strong> @Html.ValidationSummary(false)
+    </div>
+}
+
+@if (User.IsInRole("Jefatura"))
+{
+    <div class="alert alert-success">
+        <p>Has iniciado sesión correctamente.</p>
+    </div>
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,30 +28,49 @@
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/Content/menu.css">
 </head>
-<body class="inicio">
+<body class="inicio jefatura">
     <img src="~/Imagnes/joseArango.jpg" alt="" class="full-screen-image">
 
     <div class="sidebar">
         <button class="toggle-btn" onclick="toggleMenu()">☰</button>
         <ul class="menu">
             <li class="nav-item">
-                @Html.ActionLink("Login", "Index", "Login", new { area = "" }, new { @class = "nav-link" })
+                @Html.ActionLink("Login", "Index", "Login", new { area = "" }, new { @class = "nav-link", id = "loginLink" })
             </li>
-            <li class="nav-item">
-                @Html.ActionLink("Usuario Administrativo", "Index", "UsuarioAdmin", new { area = "" }, new { @class = "nav-link" })
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("Carrera", "Index", "Carreras", new { area = "" }, new { @class = "nav-link" })
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("Consulta de Docente", "Index", "Consultar", new { area = "" }, new { @class = "nav-link" })
-            </li>
-            <li class="nav-item">
-                @Html.ActionLink("Consulta Profesor", "Index", "Docente", new { area = "" }, new { @class = "nav-link" })
-            </li>
+
+            @if (User.Identity.IsAuthenticated && User.IsInRole("Jefatura"))
+            {
+                <li class="nav-item jefatura-only">
+                    @Html.ActionLink("Usuario Administrativo", "Index", "UsuarioAdmin", new { area = "" }, new { @class = "nav-link" })
+                </li>
+
+                <li class="nav-item jefatura-only">
+                    @Html.ActionLink("Carrera", "Index", "Carreras", new { area = "" }, new { @class = "nav-link disabled" })
+                </li>
+                <li class="nav-item jefatura-only">
+                    @Html.ActionLink("Consulta de Docente", "Index", "Consultar", new { area = "" }, new { @class = "nav-link disabled" })
+                </li>
+                <li class="nav-item jefatura-only">
+                    @Html.ActionLink("Consulta Profesor", "Index", "Docente", new { area = "" }, new { @class = "nav-link disabled" })
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    @Html.ActionLink("Usuario Administrativo", "Index", "UsuarioAdmin", new { area = "" }, new { @class = "nav-link disabled" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Carrera", "Index", "Carreras", new { area = "" }, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Consulta de Docente", "Index", "Consultar", new { area = "" }, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Consulta Profesor", "Index", "Docente", new { area = "" }, new { @class = "nav-link" })
+                </li>
+            }
         </ul>
     </div>
-
 
     <div class="container body-content">
         @RenderBody()
@@ -47,6 +85,4 @@
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/menu.js"></script>
 </body>
-
 </html>
-

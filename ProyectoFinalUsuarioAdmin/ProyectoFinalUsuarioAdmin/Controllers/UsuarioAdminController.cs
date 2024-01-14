@@ -7,9 +7,11 @@ using System.Web.Mvc;
 
 namespace ProyectoFinalUsuarioAdmin.Controllers
 {
+  
     public class UsuarioAdminController : Controller
     {
         // GET: UsuarioAdmin
+    
         public ActionResult Index()
         {
             List<UsuarioAdmin> Usuarios = new List<UsuarioAdmin>();

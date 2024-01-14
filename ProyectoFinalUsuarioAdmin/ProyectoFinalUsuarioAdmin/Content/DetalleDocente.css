@@ -1,0 +1,24 @@
+﻿table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: solid 1px #b88989;
+    padding: 5px;
+}
+
+th {
+    background-color: red;
+    color: white;
+    text-align: left;
+}
+
+tr:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+tr:nth-child(event) {
+    background-color: #eee;
+}

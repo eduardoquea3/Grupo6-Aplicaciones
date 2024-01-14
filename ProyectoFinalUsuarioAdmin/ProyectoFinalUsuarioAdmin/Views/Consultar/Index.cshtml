@@ -4,11 +4,17 @@
 }
 
 <h2>Index</h2>
+<p>
+    @Html.ActionLink("Reporte Docente", "Imprimir", "Imprimir", null, new { @class = "btn btn-success" })
 
-@Html.ActionLink("Agregar", "Agregar", "Consultas", null, new { @class = "btn btn-success" })
+</p>
+
+
 
 @if (Model != null && Model.Count > 0)
 {
+   
+
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -50,4 +56,5 @@
 else
 {
     <p>No hay datos disponibles.</p>
-}
+  
+    }

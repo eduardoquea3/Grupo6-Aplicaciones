@@ -18,7 +18,7 @@ namespace ProyectoFinalUsuarioAdmin.Controllers
                 if (string.IsNullOrEmpty(nombreCompleto))
                 {
                     // Manejar el caso en el que no se proporciona un nombre completo
-                    return RedirectToAction("Error"); // Redireccionar a una página de error o manejar de otra forma
+                    return RedirectToAction(""); // Redireccionar a una página de error o manejar de otra forma
                 }
 
                 using (var bd = new ProyectoFinalEntities2())

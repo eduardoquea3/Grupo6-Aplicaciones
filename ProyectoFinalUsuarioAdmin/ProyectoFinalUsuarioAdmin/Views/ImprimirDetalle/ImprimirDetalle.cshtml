@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "ImprimirDetalle";
+    Layout = null; // No usar un diseño para esta vista
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImprimirDetalle</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <CrystalDecisions.Web.CrystalReportViewer ID="CrystalReportViewer1"
+                                                  runat="server"
+                                                  AutoDataBind="true"
+                                                  GroupTreeImagesFolderUrl=""
+                                                  ReportSourceID="CrystalReportSource1">
+            <ReportSource ID="CrystalReportSource1">
+                <ReportFile FileName="~/Models/Report/CrystalReport1.rpt"></ReportFile>
+            </ReportSource>
+        </CrystalDecisions.Web.CrystalReportViewer>
+    </div>
+</body>
+</html>
+
+
+
