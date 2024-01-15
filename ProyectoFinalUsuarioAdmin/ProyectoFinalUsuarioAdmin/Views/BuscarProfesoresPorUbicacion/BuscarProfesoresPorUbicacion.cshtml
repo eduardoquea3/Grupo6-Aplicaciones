@@ -1,0 +1,53 @@
+﻿@model List<ProyectoFinalUsuarioAdmin.Models.ConsultaProfesorResultado>
+
+@{
+    ViewBag.Title = "Resultado de Búsqueda";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Resultado de Búsqueda</title>
+</head>
+<body>
+    <h2>Resultado de Búsqueda</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <p>Cantidad de profesores encontrados: @Model.Count</p>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre Completo</th>
+                    <th>Distrito</th>
+                    <th>Provincia</th>
+                    <th>Departamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var resultado in Model)
+                {
+                    <tr>
+                        <td>@resultado.NombreCompleto</td>
+                        <td>@resultado.Distrito</td>
+                        <td>@resultado.Provincia</td>
+                        <td>@resultado.Departamento</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No hay resultados disponibles.</p>
+    }
+
+    <p>
+        @Html.ActionLink("Nueva Búsqueda", "Index")
+    </p>
+</body>
+</html>
+
+

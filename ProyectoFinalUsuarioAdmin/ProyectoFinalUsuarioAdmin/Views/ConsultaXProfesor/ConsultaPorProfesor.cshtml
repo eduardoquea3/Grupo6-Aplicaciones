@@ -1,0 +1,46 @@
+﻿@model List<ProyectoFinalUsuarioAdmin.Models.ConsultaProfesorResultado>
+
+@{
+    ViewBag.Title = "ConsultaPorProfesor";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ConsultaPorProfesor</title>
+</head>
+<body>
+    <h2>ConsultaPorProfesor</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre Completo</th>
+                    <th>Distrito</th>
+                    <th>Provincia</th>
+                    <th>Departamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var resultado in Model)
+                {
+                    <tr>
+                        <td>@resultado.NombreCompleto</td>
+                        <td>@resultado.Distrito</td>
+                        <td>@resultado.Provincia</td>
+                        <td>@resultado.Departamento</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No hay resultados disponibles.</p>
+    }
+</body>
+</html>
+

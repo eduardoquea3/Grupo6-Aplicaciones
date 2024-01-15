@@ -131,9 +131,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BuscarProfesoresPorUbicacionController.cs" />
     <Compile Include="Controllers\CarrerasController.cs" />
     <Compile Include="Controllers\ConsultarController.cs" />
     <Compile Include="Controllers\ConsultarPerfilController.cs" />
+    <Compile Include="Controllers\ConsultaXProfesorController.cs" />
     <Compile Include="Controllers\DetalleDocenteController.cs" />
     <Compile Include="Controllers\DetalleProfesorController.cs" />
     <Compile Include="Controllers\DocenteController.cs" />
@@ -149,6 +151,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ConsultaPersonalizadoDocente.cs" />
+    <Compile Include="Models\ConsultaProfesorResultado.cs" />
     <Compile Include="Models\Cursos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -245,7 +248,9 @@
     <Content Include="Imagnes\home.png" />
     <Content Include="Imagnes\jose.jpg" />
     <Content Include="Imagnes\joseArango.jpg" />
+    <Content Include="Imagnes\machine.jpg" />
     <Content Include="Imagnes\Nueva.jpg" />
+    <Content Include="Imagnes\photo.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -316,9 +321,14 @@
     <Content Include="Views\Imprimir\Imprimir.cshtml" />
     <Content Include="Views\ImprimirDetalle\Index.cshtml" />
     <Content Include="Views\ImprimirDetalle\ImprimirDetalle.cshtml" />
+    <Content Include="Views\ConsultaXProfesor\Index.cshtml" />
+    <Content Include="Views\ConsultaXProfesor\ConsultaPorProfesor.cshtml" />
+    <Content Include="Views\BuscarProfesoresPorUbicacion\Index.cshtml" />
+    <Content Include="Views\BuscarProfesoresPorUbicacion\BuscarProfesoresPorUbicacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ConsultarDocnete\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

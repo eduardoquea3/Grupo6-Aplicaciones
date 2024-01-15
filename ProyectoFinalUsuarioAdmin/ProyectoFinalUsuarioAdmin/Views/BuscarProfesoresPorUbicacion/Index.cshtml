@@ -1,0 +1,31 @@
+﻿@model ProyectoFinalUsuarioAdmin.Models.ConsultaProfesorResultado
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Buscar Profesores por Ubicación</h2>
+
+@using (Html.BeginForm("BuscarProfesoresPorUbicacion", "ConsultaXProfesor", FormMethod.Get))
+
+{
+    <div>
+        <label for="departamento">Departamento:</label>
+        @Html.TextBoxFor(model => model.Departamento)
+    </div>
+
+    <div>
+        <label for="provincia">Provincia:</label>
+        @Html.TextBoxFor(model => model.Provincia)
+    </div>
+
+    <div>
+        <label for="distrito">Distrito:</label>
+        @Html.TextBoxFor(model => model.Distrito)
+    </div>
+
+    <div>
+        <input type="submit" value="Buscar" />
+    </div>
+}
+

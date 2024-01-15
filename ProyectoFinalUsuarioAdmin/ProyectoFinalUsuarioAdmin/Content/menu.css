@@ -11,7 +11,7 @@
     position: fixed;
     top: 0;
     left: -250px;
-    background-color: rgb(24, 106, 161);
+    background-color: #000; /* Cambia el color de fondo a negro */
     transition: all 0.3s ease;
 }
 
@@ -25,11 +25,14 @@
     top: 20px;
     font-size: 24px;
     cursor: pointer;
-    color: greenyellow;
+    background-color:#000000; /* Cambia el color del icono a negro */
     background: none;
     border: none;
     outline: none;
 }
+    .toggle-btn:hover {
+        background-color: #000000; /* Puedes ajustar el color según tus preferencias */
+    }
 
 .menu {
     list-style: none;
@@ -41,14 +44,14 @@
     }
 
         .menu li a {
-            color: #fff;
+            color: #000000;
             text-decoration: none;
             font-size: 18px;
             transition: all 0.3s ease;
         }
 
             .menu li a:hover {
-                color: #f00;
+                color: #000000;
             }
 /* Establecer el tamaño y posición de la imagen */
 .full-screen-image {
@@ -163,7 +166,7 @@ body.inicio {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #333; /* Cambia el color de fondo según tus preferencias */
+    background-color: #0094ff; /* Cambia el color de fondo según tus preferencias */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -184,7 +187,7 @@ body.inicio {
 .user-info {
     color: white; /* Cambia el color del texto según tus preferencias */
 }
-.inicio 
+
 
 
 
